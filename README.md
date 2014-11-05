@@ -23,4 +23,4 @@ $ cd path/to/project
 $ chmod a+rx provision.sh
 $ vagrant up
 </code></pre>
-... wait until it finishes ... then go to <a href="http://192.168.168.168">the project, running on your virtual machine</a>, you can also access it goint to <a href="http://192.168.168.168">http://192.168.168.168</a>.
+... wait until it finishes ... then go to <a href="http://192.168.168.168">the project, running on your virtual machine</a>, you can also access it goint to <a href="http://192.168.168.168:3000">http://192.168.168.168:3000</a>.

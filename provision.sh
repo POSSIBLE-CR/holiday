@@ -35,7 +35,7 @@ echo "c2VydmVyIHsNCglzZXJ2ZXJfbmFtZSAxOTIuMTY4LjE2OC4xNjg7DQogICAgICAgIGxvY2F0aW
 service nginx restart
 
 # Config files
-echo 'exportZXhwb3J0IFBTMT0iXFtcZVswMTszMm1cXVxbXGVbMW1cXVtcW1xlWzBtXF1cdFxbXGVbMDE7MzJtXF1cW1xlWzFtXF1dXFtcZVswbVxdXFtcZVsxbVxdIFx3Oj5cW1xlWzBtXF0gIg==' | base64 -d | tee -a ~vagrant/.bashrc
+echo 'ZXhwb3J0IFBTMT0iXFtcZVswMTszMm1cXVxbXGVbMW1cXVtcW1xlWzBtXF1cdFxbXGVbMDE7MzJtXF1cW1xlWzFtXF1dXFtcZVswbVxdXFtcZVsxbVxdIFx3Oj5cW1xlWzBtXF0gIg==' | base64 -d | tee -a ~vagrant/.bashrc
 echo 'IlxlW0EiOiAgICAgaGlzdG9yeS1zZWFyY2gtYmFja3dhcmQNCiJcZVtCIjogICAgIGhpc3Rvcnktc2VhcmNoLWZvcndhcmQNCiJcZU9BIjogICAgIGhpc3Rvcnktc2VhcmNoLWJhY2t3YXJkDQoiXGVPQiI6ICAgICBoaXN0b3J5LXNlYXJjaC1mb3J3YXJkDQo=' | base64 -d | tee -a /etc/inputrc
 
 # Owner

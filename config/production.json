@@ -1,0 +1,9 @@
+{
+    "baseUrl":"www.possible.com/holiday",
+    "port":"3000",
+    "cluster" : true,
+    "sessionSecret":"beteqE3utrefrebratrUmUne3A6ufraP",
+    "connectset": [
+        "mongodb://127.0.0.1:27017/holiday"
+    ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "holiday",
+  "version": "0.0.1",
+  "description": "POSSIBLE Holidays app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/POSSIBLE-CR/holiday.git"
+  },
+  "keywords": [
+    "holidays",
+    "possible",
+    "costarica",
+    "card"
+  ],
+  "author": "Carlos Naranjo <carlos.naranjo@possible.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/POSSIBLE-CR/holiday/issues"
+  },
+  "homepage": "https://github.com/POSSIBLE-CR/holiday",
+  "dependencies": {
+    "body-parser": "^1.9.2",
+    "compression": "^1.2.0",
+    "cookie-parser": "^1.3.3",
+    "errorhandler": "^1.2.2",
+    "express": "^4.10.1",
+    "jade": "^1.7.0",
+    "method-override": "^2.3.0",
+    "mongoose": "^3.8.18",
+    "morgan": "^1.4.1",
+    "multer": "^0.1.6",
+    "nconf": "^0.6.9",
+    "passport": "^0.2.1",
+    "response-time": "^2.2.0",
+    "serve-favicon": "^2.1.6",
+    "versionator": "^0.5.0"
+  },
+  "engine": "node >= 0.10.32"
+}

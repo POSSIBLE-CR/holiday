@@ -21,8 +21,8 @@ This setup assumes (requires) that you already have an SSH key pair, if you don'
 <pre><code>$ ls -l ~/.ssh | grep id_rsa</code></pre>
 
 You should see something like this:
-<pre>-rw-------  1 username  group    1766 Feb 27  2014 id_rsa
--rw-------  1 username  group     413 Feb 27  2014 id_rsa.pub<pre>
+<code><pre>-rw-------  1 username  group    1766 Feb 27  2014 id_rsa
+-rw-------  1 username  group     413 Feb 27  2014 id_rsa.pub<pre></code>
 
 If there's nothing in your terminal output, generate one using the following command:
 <pre><code>$ ssh-keygen</code></pre>

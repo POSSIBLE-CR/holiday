@@ -19,8 +19,8 @@ Please use an infinitive verb.
 
 <pre><code>
 $ vagrant box add ubuntu/precise64
-$ cd path/to/project
-$ chmod a+rx provision.sh
+$ cd path/to/the-holiday-project
 $ vagrant up
 </code></pre>
-... wait until it finishes ... then go to <a href="http://192.168.168.168">the project, running on your virtual machine</a>, you can also access it goint to <a href="http://192.168.168.168:3000">http://192.168.168.168:3000</a>.
+
+Wait until it's done, once it's ready, wait a few seconds and then open in your browser <a href="http://192.168.168.168" target="_blank">the project, that is running on your virtual machine</a>. If see a "502 Bad Gateway" gateway in your browser, just wait for a few more seconds before reloading the project page.

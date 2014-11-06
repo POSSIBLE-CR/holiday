@@ -17,8 +17,19 @@ Please use an infinitive verb.
 
 ### Environment setup
 
-<pre><code>
-$ vagrant box add ubuntu/precise64
+This setup assumes (requires) that you already have an SSH key pair, if you don't know if you already have one, run this:
+<pre><code>$ ls -l ~/.ssh | grep id_rsa</code></pre>
+
+You should see something like this:
+<pre>-rw-------  1 username  group    1766 Feb 27  2014 id_rsa
+-rw-------  1 username  group     413 Feb 27  2014 id_rsa.pub<pre>
+
+If there's nothing in your terminal output, generate one using the following command:
+<pre><code>$ ssh-keygen</code></pre>
+
+And yes, you should set a password for your key pair. After that, you're ready to continue. Run the following commands (they will take time the first time it's run).
+
+<pre><code>$ vagrant box add ubuntu/precise64
 $ cd path/to/the-holiday-project
 $ vagrant up
 </code></pre>

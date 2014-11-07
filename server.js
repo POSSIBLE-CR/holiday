@@ -36,6 +36,8 @@ app.set('port', process.env.PORT || nconf.get('port'));
 app.set('views', basePath +  '/views');
 app.set('view engine', 'jade');
 
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(multer());
@@ -52,7 +54,56 @@ app.use(methodOverride());
 //TODO implement versionator
 //app.use(versionator.middleware);
 
+// Begin Passport Authentication Code
+//TODO implement Passport Authentication
+var FacebookStrategy = require('passport-facebook').Strategy,
+    TwitterStrategy = require('passport-twitter').Strategy;
+
+// Passport FACEBOOK code
+passport.use(new FacebookStrategy({
+    clientID: '841313675889426',
+    clientSecret: 'c24893aeb3e32f435ba44de7eb7bfa1b',
+    callbackURL: '/auth/facebook/callback' // For security reasons, the redirection URL must reside on the same host that is registered with Facebook.
+  },
+  function(accessToken, refreshToken, profile, done) {
+    console.log(profile);
+    console.log(done);
+        User.findOne({ 'fb.id': profile.id }, function(err, foundUser) {
+            if (foundUser) {
+                done(err, foundUser);
+            } else {
+                User.addFBUser(accessToken, profile, done);
+            }
+        });
+    }
+));
+/*
+// Passport TWITTER code
+passport.use(new TwitterStrategy({
+    consumerKey: TWITTER_CONSUMER_KEY,
+    consumerSecret: TWITTER_CONSUMER_SECRET,
+    callbackURL: "http://www.example.com/auth/twitter/callback"
+  },
+  function(token, tokenSecret, profile, done) {
+    User.findOrCreate(..., function(err, user) {
+      if (err) { return done(err); }
+      done(null, user);
+    });
+  }
+));*/
+
+app.get('/auth/facebook', passport.authenticate('facebook'));
+app.get('/auth/facebook/callback', passport.authenticate('facebook', {
+    successRedirect: '/', 
+    failureRedirect: '/login' 
+}));
+
+
+// End Passport Authentication Code
+
+
 app.use('/', require('./controllers/home').home);
+app.use('/login', require('./controllers/login').login);
 
 // error handling middleware should be loaded after the loading the routes
 if ('development' === app.get('env')) {

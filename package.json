@@ -35,6 +35,8 @@
     "multer": "^0.1.6",
     "nconf": "^0.6.9",
     "passport": "^0.2.1",
+    "passport-facebook": "^1.0.3",
+    "passport-twitter": "^1.0.2",
     "response-time": "^2.2.0",
     "serve-favicon": "^2.1.6",
     "versionator": "^0.5.0"

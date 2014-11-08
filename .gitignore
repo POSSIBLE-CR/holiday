@@ -26,4 +26,6 @@ Icon?
 # logs
 /logs
 
+public/css/
 public/js/main.min.js
+.sass-cache/

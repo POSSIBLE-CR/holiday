@@ -5,5 +5,13 @@
     "sessionSecret":"seWrAwutejAthutruBrU2Aj9qud6crew",
     "connectset": [
         "mongodb://127.0.0.1:27017/holiday"
-    ]
+    ],
+    "facebook":{
+        "appId":"841313675889426",
+        "appSecret":"c24893aeb3e32f435ba44de7eb7bfa1b"
+    },
+    "twitter":{
+        "consumerKey":"BboY1MjqHHoQomDDOWvwieGp9",
+        "consumerSecret":"Rc5qtASNvoxcVYULV2G0dFFFIzUMm16bMJDUDxgNaxO3JMWMcf"
+    }
 }

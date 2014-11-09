@@ -13,6 +13,7 @@ var responseTime = require('response-time');
 var logger = require('morgan');
 var errorHandler = require('errorhandler');
 var methodOverride = require('method-override');
+var session = require('express-session');
 var favicon = require('serve-favicon');
 var versionator = require('versionator').create('0.0.1');
 
@@ -34,6 +35,12 @@ var app = express();
 app.set('port', process.env.PORT || nconf.get('port'));
 app.set('views', basePath +  '/views');
 app.set('view engine', 'jade');
+app.use(session({
+    secret : nconf.get('sessionSecret'),
+    saveUninitialized: true,
+    resave: true
+    }
+));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(bodyParser.json());
@@ -52,9 +59,17 @@ app.use(methodOverride());
 //TODO implement versionator
 //app.use(versionator.middleware);
 
+//LOGIN
+app.use(function (req, res, next) {
+    if (req.url.indexOf('/app') === 0 && !req.isAuthenticated()) {
+        res.redirect('/signup');
+    }
+    next();
+});
+
 app.use('/', require('./controllers/passportHandler').passportRouter);
 app.use('/', require('./controllers/home').home);
-app.use('/login', require('./controllers/login').login);
+app.use('/signup', require('./controllers/signup').signup);
 
 // error handling middleware should be loaded after the loading the routes
 if ('development' === app.get('env')) {

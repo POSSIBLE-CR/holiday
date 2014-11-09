@@ -17,11 +17,11 @@ passport.use(new FacebookStrategy({
         callbackURL: '/auth/facebook/callback'
     },
     function(accessToken, refreshToken, profile, done) {
-        User.findOne({ 'facebook.id': profile.id }, function(err, foundUser) {
+        User.findOne({ 'id': profile.id }, function(err, foundUser) {
             if (foundUser) {
                 done(err, foundUser);
             } else {
-                User.addFBUser(accessToken, profile, done);
+                User.addUser(profile, {token: accessToken} , done);
             }
         });
     })
@@ -34,11 +34,11 @@ passport.use(new TwitterStrategy({
         callbackURL: "/auth/twitter/callback"
     },
     function(token, tokenSecret, profile, done) {
-        User.findOne({ 'socialNetworkID': profile.id }, function(err, foundUser) {
+        User.findOne({ 'id': profile.id }, function(err, foundUser) {
             if (foundUser) {
                 done(err, foundUser);
             } else {
-                User.addFBUser(accessToken, profile, done);
+                User.addUser( profile, {token : token, tokenSecret : tokenSecret}, done);
             }
         });
     })
@@ -52,17 +52,18 @@ passport.deserializeUser(function(user, done) {
     done(null, user);
 });
 
-passportRouter.get('/auth/facebook', passport.authenticate('facebook',{scope: FACEBOOK_PERMISSIONS }));
-passportRouter.get('/auth/facebook/callback', passport.authenticate('facebook', {
-    successRedirect: '/login/chooseAvatar',
-    failureRedirect: '/login'
-}));
-
 passportRouter.get('/auth/twitter', passport.authenticate('twitter'));
 
 passportRouter.get('/auth/twitter/callback', passport.authenticate('twitter', {
-    successRedirect: '/login/chooseAvatar',
-    failureRedirect: '/login'
+    successRedirect: '/',
+    failureRedirect: '/signup'
+}));
+
+passportRouter.get('/auth/facebook', passport.authenticate('facebook',{scope: FACEBOOK_PERMISSIONS }));
+
+passportRouter.get('/auth/facebook/callback', passport.authenticate('facebook', {
+    successRedirect: '/',
+    failureRedirect: '/signup'
 }));
 
 module.exports.passportRouter = passportRouter;

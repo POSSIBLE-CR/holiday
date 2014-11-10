@@ -29,6 +29,19 @@ If there's nothing in your terminal output, generate one using the following com
 
 And yes, you should set a password for your key pair. After that, you're ready to continue. Run the following commands (they will take time the first time it's run).
 
+Now clone the latest repository from Git Hub by navigating to the folder where you whant it to be.
+
+For example:
+
+<pre><code>
+$ cd ~/Desktop/Possible/Work/Holiday
+</code></pre>
+
+Then use this line to download the files
+<pre><code>
+git clone https://github.com/POSSIBLE-CR/holiday
+</code></pre>
+
 <pre><code>$ vagrant box add ubuntu/precise64
 $ cd path/to/the-holiday-project
 $ vagrant up

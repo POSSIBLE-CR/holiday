@@ -4,7 +4,6 @@
 	top: 30%;
 
 	width: 600px;
-	height: 200px;
 	margin: -100px 0 0 -300px;
 
 	text-align: center;
@@ -14,7 +13,7 @@
 
 		margin-top: 85px;
 
-		font-weight: bold;
+		font-family: $font-bold;
 		text-align: center;
 
 		span {
@@ -44,7 +43,7 @@
 
 			&.logo {
 				position: absolute;
-				left: 27%;
+				left: 25%;
 				top: 127px;
 
 				padding: 0 15px;
@@ -53,6 +52,8 @@
 				background-color: rgba(146, 230, 51, 0.8);
 				color: #fff;
 
+				font-family: $font-black;
+				font-size: 44px;
 				line-height: 49px;
 				letter-spacing: 2px;
 
@@ -72,17 +73,17 @@
 		display: block;
 		width: 100%;
 
+		font-family: $font-light;
 		font-size: 24px;
-		font-weight: 300;
 		text-align: center;
 
 		span {
 			display: inline-block;
-			width: 28px;
+			width: 33px;
 			padding-bottom: 5px;
 			border-bottom: 6px solid #000;
 
-			font-weight: 700;
+			font-family: $font-black;
 			line-height: 22px;
 			word-wrap: break-word;
 
@@ -98,11 +99,12 @@
 
 
 	p {
-		width: 280px;
+		width: 290px;
 		margin: 40px auto;
 
+		font-family: $font-bold;
 		font-size: 12px;
-		font-weight: bold;
+		line-height: 16px;
 	}
 
 	.get-started {
@@ -112,9 +114,9 @@
 
 		color: #000;
 
+		font-family: $font-bold;
 		font-size: 16px;
 		line-height: 22px;
-		font-weight: 700;
 		text-transform: uppercase;
 
 		&:hover {

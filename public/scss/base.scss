@@ -8,6 +8,8 @@ Author URI: http://www.possible.com
 
 
 // Partials
-//@import "partials/reset"; bootstrap already has a reset
+@import "partials/reset";
+@import "partials/typo";
 @import "partials/base";
+@import "partials/general";
 @import "partials/landing-page";

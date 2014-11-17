@@ -1,12 +1,40 @@
-/* Bullet Proof Font Face */
+/* Proxima Nova */
+
+// Light
 @font-face {
-    font-family: 'MyWebFont';
-    src: url('webfont.eot'); /* IE9 Compat Modes */
-    src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('webfont.woff') format('woff'), /* Modern Browsers */
-         url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-         url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
-    //font-weight:;
-    //font-style:;
-    //etc
+	font-family:'ProximaNovaLight';
+	src: url("../fonts/2512C3_13_0.eot");
+	src: url("../fonts/2512C3_13_0.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/2512C3_13_0.woff") format("woff"),
+		 url("../fonts/2512C3_13_0.ttf") format("truetype"),
+		 url("../fonts/2512C3_13_0.svg#wf") format("svg"),
+		 url("../fonts/2512C3_13_0.svgz#wf") format("svg");
+	font-weight:normal;
+	font-style:normal;
+}
+
+//Bold
+@font-face {
+	font-family:'ProximaNovaBold';
+	src: url("../fonts/2512C3_14_0.eot");
+	src: url("../fonts/2512C3_14_0.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/2512C3_14_0.woff") format("woff"),
+		 url("../fonts/2512C3_14_0.ttf") format("truetype"),
+		 url("../fonts/2512C3_14_0.svg#wf") format("svg"),
+		 url("../fonts/2512C3_14_0.svgz#wf") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+// Black
+@font-face {
+	font-family:'ProximaNovaBlack';
+	src: url("../fonts/2512C3_12_0.eot");
+	src: url("../fonts/2512C3_12_0.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/2512C3_12_0.woff") format("woff"),
+		 url("../fonts/2512C3_12_0.ttf") format("truetype"),
+		 url("../fonts/2512C3_12_0.svg#wf") format("svg"),
+		 url("../fonts/2512C3_12_0.svgz#wf") format("svg");
+	font-weight: normal;
+	font-style: normal;
 }

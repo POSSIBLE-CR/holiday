@@ -3,10 +3,34 @@ html {
 }
 
 body {
+	background-color: $color-lightblue;
 }
 
 .wrapper {
 	color: red;
 	display: block;
 	background-color: red;
+}
+
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+
+	@include breakpoint('m') {
+		width: 750px;
+	}
+
+	@include breakpoint('l') {
+		width: 970px;
+	}
+
+	@include breakpoint('w') {
+		width: 1170px;
+	}
+}
+
+.dotted-container {
+	background: url('../img/pattern.png') repeat;
 }

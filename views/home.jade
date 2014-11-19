@@ -2,20 +2,27 @@ extend layout
 
 block content
 
-	.hero-container
-		hgroup
-			h1.headline 
-				span.st World's 
-				span.nd Biggest
-				span.logo (Possible) 
-				span.rd Party!!!
+	.landing
 
-			h2.subheadline 
-				span.line
-				| Bye bye 
-				span.year 2014
-				span.line
+		.container
+		
+			blockquote.quote-message
+				p “BABE, YOU’RE MY EVERYTHING”
 
-		p Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+				small from Marco Kelso in San José.
+			
 
-		a(href="/signup").get-started Get started
+		.dotted-container
+
+			.container
+				
+				h1.headline Share a loving message on this holidays.
+
+				p
+					a(href='/auth/facebook').btn 
+						span Sign in with
+						span.icon.icon-facebook
+
+					a(href='/auth/twitter').btn
+						span Sign in with
+						span.icon.icon-twitter

@@ -13,10 +13,7 @@ body {
 }
 
 .container {
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto;
+	margin: auto;
 
 	@include breakpoint('m') {
 		width: 750px;
@@ -33,4 +30,26 @@ body {
 
 .dotted-container {
 	background: url('../img/pattern.png') repeat;
+}
+
+footer{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 1.5%;
+    
+    p{
+        text-align: center;
+        line-height: 30px;
+        
+        a{
+            color: $color-white;
+            text-decoration: none;
+            text-transform: uppercase;
+            
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
 }

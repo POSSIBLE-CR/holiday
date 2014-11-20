@@ -1,5 +1,18 @@
 /* Proxima Nova */
 
+// Thin
+@font-face {
+	font-family:'ProximaNovaThin';
+	src: url("../fonts/2512C3_1_0.eot");
+	src: url("../fonts/2512C3_1_0.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/2512C3_1_0.woff") format("woff"),
+		 url("../fonts/2512C3_1_0.ttf") format("truetype"),
+		 url("../fonts/2512C3_1_0.svg#wf") format("svg"),
+		 url("../fonts/2512C3_1_0.svgz#wf") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
 // Light
 @font-face {
 	font-family:'ProximaNovaLight';
@@ -13,6 +26,18 @@
 	font-style:normal;
 }
 
+// Regular
+@font-face {
+	font-family:'ProximaNovaRegular';
+	src: url("../fonts/2512C3_10_0.eot");
+	src: url("../fonts/2512C3_10_0.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/2512C3_10_0.woff") format("woff"),
+		 url("../fonts/2512C3_10_0.ttf") format("truetype"),
+		 url("../fonts/2512C3_10_0.svg#wf") format("svg"),
+		 url("../fonts/2512C3_10_0.svgz#wf") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
 
 //Bold
 @font-face {

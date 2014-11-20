@@ -1,7 +1,23 @@
 // Colors
+$color-lightblue: #1d9ed9;
+$color-black: #000000;
+$color-white: #ffffff;
 
 
 // Fonts
 $font-light: 'ProximaNovaLight';
 $font-bold: 'ProximaNovaBold';
 $font-black: 'ProximaNovaBlack';
+$font-thin: 'ProximaNovaThin', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-light: 'ProximaNovaLight', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-regular: 'ProximaNovaRegular', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-bold: 'ProximaNovaBold', Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-black: 'ProximaNovaBlack', Helvetica, Arial, "Lucida Grande", sans-serif;
+
+$breakpoints: (
+  'xs' : 480px,
+  's'  : 640px,
+  'm'  : 767px,
+  'l'  : 1024px,
+  'w'  : 1200px
+);

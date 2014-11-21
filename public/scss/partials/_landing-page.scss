@@ -25,8 +25,8 @@ body{
             margin: 0 auto;
 
             p {
-                font-size: 3vw; //42px; //79px;
-                line-height: 7.5vh; //82px;
+                font-size: 3vw;
+                line-height: 7.5vh;
                 text-transform: uppercase;
                 letter-spacing: 2px;
                 
@@ -43,7 +43,7 @@ body{
                 display: block;
                 padding-top: 10px;
                 font-size: 14px;
-                line-height: 16px;
+                line-height: 2vw;
             }
         }
     }
@@ -57,60 +57,111 @@ body{
         width: 100vw;
         height: 38vh;
         padding: 0;
-        
-            h1.headline {
-                position: absolute;
-                top:8vh;
-                left: 0;
-                width: 100vw;
-                font-size: 22.5px;
-                line-height: 20px;
-                text-transform: uppercase;
-            }
 
-            .login{
-                text-align: center;
-                position: absolute;
-                width: 100vw;
-                top: 18vh;
-                left: 0;
+        h1.headline {
+            position: absolute;
+            top:8vh;
+            left: 0;
+            width: 100vw;
+            font-size: 22.5px;
+            line-height: 20px;
+            text-transform: uppercase;
+        }
 
-                li{
+        .login{
+            text-align: center;
+            position: absolute;
+            width: 100vw;
+            top: 18vh;
+            left: 0;
+
+            li{
+                display: inline-block;
+
+                a.btn {
                     display: inline-block;
+                    margin: 0 20px;
+                    padding: 0 77px 0 20px;
 
-                    a.btn {
-                        display: inline-block;
-                        margin: 0 20px;
-                        padding: 0 77px 0 20px;
+                    background-color: $color-black;
+                    color: $color-white;
 
-                        background-color: $color-black;
-                        color: $color-white;
+                    font-family: $font-light;
+                    font-size: 27px;
+                    line-height: 57px;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    display: inline-block;
+                    position: relative;
 
-                        font-family: $font-light;
-                        font-size: 27px;
-                        line-height: 57px;
-                        text-transform: uppercase;
-                        text-decoration: none;
-                        display: inline-block;
-                        position: relative;
-
-                        &:before {
-                            font-family: icomoon;
-                            position: absolute;
-                            top:0;
-                            right:0;
-                            width: 57px;
-                            display:block;
-                            text-align: center;
-                            border-left: 1px solid #c2c2c2;
-                        }
-
-                        &:hover{
-                            background-color: #fff;
-                            color: #000;
-                        }
+                    &:before {
+                        font-family: icomoon;
+                        position: absolute;
+                        top:0;
+                        right:0;
+                        width: 57px;
+                        display:block;
+                        text-align: center;
+                        border-left: 1px solid #c2c2c2;
                     }
-                }    
+
+                    &:hover{
+                        background-color: #fff;
+                        color: #000;
+                    }
+                }
+            }    
+        }
+    }
+}
+
+
+@media (max-width: 640px) {
+    .landing {
+
+        .container{
+            top: 7vh;
+
+            .quote-message {
+                width: 70vw;
+
+                p {
+                    font-size: 5.5vw;
+                    line-height: 5.5vh;
+                }
             }
         }
+        .dotted-container{
+            h1.headline {
+                position: static;
+                width: 90vw;
+                margin: 0 auto;
+                font-size: 18px;
+                line-height: 20px;
+                padding: 2vh 0;
+            }
+            
+            .login{
+                position: static;
+                text-align: center;
+                
+                li{
+                    width: 70vw;
+                    
+                    a.btn{
+                        display: block;
+                        padding: 0 40px 0 0px;
+                        font-size: 20px;
+                        line-height: 40px;
+                        margin-bottom: 2.5vh;
+                        
+                        &:before {
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

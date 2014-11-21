@@ -2,20 +2,22 @@ extend layout
 
 block content
 
-	.hero-container
-		hgroup
-			h1.headline 
-				span.st World's 
-				span.nd Biggest
-				span.logo (Possible) 
-				span.rd Party!!!
+	.landing
 
-			h2.subheadline 
-				span.line
-				| Bye bye 
-				span.year 2014
-				span.line
+		.container
+		
+			blockquote.quote-message
+				p Esta es una prueba si esto funciona bien vamos a dejar de testear lo largo de los textos de una vez por todas no pongo comas pq no quise eso
 
-		p Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+				small from Marco Kelso in San José.
+			
 
-		a(href="/signup").get-started Get started
+		.dotted-container
+			h1.headline Share a loving message on this holidays.
+
+			ul.login
+				li
+					a(href='/auth/facebook').btn.icon-facebook Sign in with
+
+				li
+					a(href='/auth/twitter').btn.icon-twitter Sign in with

@@ -3,10 +3,53 @@ html {
 }
 
 body {
+	background-color: $color-lightblue;
 }
 
 .wrapper {
 	color: red;
 	display: block;
 	background-color: red;
+}
+
+.container {
+	margin: auto;
+
+	@include breakpoint('m') {
+		width: 750px;
+	}
+
+	@include breakpoint('l') {
+		width: 970px;
+	}
+
+	@include breakpoint('w') {
+		width: 1170px;
+	}
+}
+
+.dotted-container {
+	background: url('../img/pattern.png') repeat;
+}
+
+footer{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 1.5%;
+    
+    p{
+        text-align: center;
+        line-height: 4vh;
+        
+        a{
+            color: $color-white;
+            text-decoration: none;
+            text-transform: uppercase;
+            
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
 }

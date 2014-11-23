@@ -70,6 +70,7 @@ app.use(function (req, res, next) {
 app.use('/', require('./controllers/passportHandler').passportRouter);
 app.use('/', require('./controllers/home').home);
 app.use('/signup', require('./controllers/signup').signup);
+app.use('/api', require('./controllers/api').api);
 
 // error handling middleware should be loaded after the loading the routes
 if ('development' === app.get('env')) {

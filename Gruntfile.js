@@ -125,7 +125,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
 
-  grunt.registerTask('build', ['clean:dist', 'uglify:dist', 'copy:dist', 'imagemin:dist']);
+  grunt.registerTask('build', ['clean:dist', 'uglify:dist', 'copy:dist']);
 
   // Default task(s).
   grunt.registerTask('default', ['watch']);

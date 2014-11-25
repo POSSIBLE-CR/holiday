@@ -20,3 +20,9 @@ block content
 
 				li
 					a(href='/auth/twitter').btn.icon-twitter Sign in with
+
+		form(name="message", action="/api/message", method="post")
+			input(type="text", name="message")
+			input(type="number", name="longitude")
+			input(type="number", name="latitude")
+			input(type="submit")

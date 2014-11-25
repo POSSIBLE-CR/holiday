@@ -63,13 +63,17 @@ app.use(methodOverride());
 app.use(function (req, res, next) {
     if (req.url.indexOf('/app') === 0 && !req.isAuthenticated()) {
         res.redirect('/signup');
+    }else if (req.url.indexOf('/api') === 0 && !req.isAuthenticated()){
+        res.sendStatus(403);
+    }else{
+        next();
     }
-    next();
 });
 
 app.use('/', require('./controllers/passportHandler').passportRouter);
 app.use('/', require('./controllers/home').home);
 app.use('/signup', require('./controllers/signup').signup);
+app.use('/api', require('./controllers/api').api);
 
 // error handling middleware should be loaded after the loading the routes
 if ('development' === app.get('env')) {

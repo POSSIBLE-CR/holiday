@@ -4,8 +4,9 @@ var timestamp = require('./../helpers/timestamp');
 
 var MessageSchema = new Schema({
     user: { type: Schema.ObjectId, ref: 'User' },
-    id : { type: String, unique : true },
-    socialNetwork : { type: String, required: true },
+    userDisplayName: { type: String },
+    userSocialNetworkId : { type: String },
+    userSocialNetwork : { type: String, required: true },
     message : { type: String, required: true },
     country : { type : String },
     countryCode : { type : String },

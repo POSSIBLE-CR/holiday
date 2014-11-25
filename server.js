@@ -63,8 +63,11 @@ app.use(methodOverride());
 app.use(function (req, res, next) {
     if (req.url.indexOf('/app') === 0 && !req.isAuthenticated()) {
         res.redirect('/signup');
+    }else if (req.url.indexOf('/api') === 0 && !req.isAuthenticated()){
+        res.sendStatus(403);
+    }else{
+        next();
     }
-    next();
 });
 
 app.use('/', require('./controllers/passportHandler').passportRouter);

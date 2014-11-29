@@ -20,6 +20,9 @@ var MessageSchema = new Schema({
 
 MessageSchema.index({ "location" : "2dsphere"});
 
+MessageSchema.index({ "created" : -1});
+
+
 MessageSchema.plugin(timestamp, { useVirtual: false });
 
 module.exports = Message = mongoose.model('Message', MessageSchema);

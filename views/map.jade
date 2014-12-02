@@ -1,0 +1,21 @@
+extend layout
+
+block content
+	script(src="http://d3js.org/d3.v3.min.js")
+	script(src="http://d3js.org/topojson.v1.min.js")
+	script(src="/js/libs/datamaps.world.min.js")
+	script(src="/js/map.js")
+
+	#map-container.dotted-container
+
+	.footer-links
+		ul
+			li
+				a(href='#').icon-new-message
+			li
+				a(href='#').icon-find-me
+			li
+				a(href='#').in.zoom-control
+					span.icon-in
+				a(href='#').out.zoom-control
+					span.icon-out

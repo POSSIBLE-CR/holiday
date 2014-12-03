@@ -12,10 +12,11 @@ block content
 
 			ul.login
 				li
-					a(href='/auth/facebook').btn.icon-facebook Sign in with
+					a(href='/auth/facebook' onClick='setCookie("fb")').btn.icon-facebook  Sign in with
 
 				li
-					a(href='/auth/twitter').btn.icon-twitter Sign in with
+					a(href='/auth/twitter' onClick='setCookie("tw")').btn.icon-twitter Sign in with
 
 				li
-				a(href='#')#hola hola
+				
+				button(onClick="hola()") holaa

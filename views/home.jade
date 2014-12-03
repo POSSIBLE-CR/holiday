@@ -6,18 +6,9 @@ block content
 
 		.container
 
-			ul.messages
-				each message in messages
-					li.messages
-						blockquote.quote-message
-							p #{message.message}
-							if message.country
-								small from #{message.userDisplayName} in #{message.country}
-							else
-								small from #{message.userDisplayName}
-
 		.dotted-container
 			h1.headline Share a loving message on this holidays.
+
 
 			ul.login
 				li
@@ -25,3 +16,6 @@ block content
 
 				li
 					a(href='/auth/twitter').btn.icon-twitter Sign in with
+
+				li
+				a(href='#')#hola hola

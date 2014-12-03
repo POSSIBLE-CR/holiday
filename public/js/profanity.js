@@ -35,6 +35,11 @@ $( "#check_profanity" ).click(function() {
     });
 });
 
+/***
+ * Get the json object and populate the profanities array
+ * @param object
+ * @return array
+ */
 function fillSelect(data) {
     var profanities = new Array();
     $.each(data, function(i, item) {
@@ -44,7 +49,12 @@ function fillSelect(data) {
 }
 
 String.prototype.contains = function(str) { return this.indexOf(str) != -1; };
-
+/***
+ * Check all the text vs the json words
+ * @param text 
+ * @param array 
+ * @return boolean
+ */
 var containsProfanity = function(text,profanities){
     var returnVal = false; 
     for (var i = 0; i < profanities.length; i++) {

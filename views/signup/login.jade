@@ -1,8 +1,11 @@
 extend ../layout
 
 block content
-	h1 SIGN IN
-	p
-		a(href='/auth/facebook') Sign in with Facebook
-	p
-		a(href='/auth/twitter') Sign in with Twitter
+	script(src="http://d3js.org/d3.v3.min.js")
+	script(src="http://d3js.org/topojson.v1.min.js")
+	script(src="/js/libs/datamaps.world.min.js")
+
+	#map-container.dotted-container
+
+	script.
+		var map = new Datamap({element: document.getElementById('map-container'), fills: { defaultFill: 'rgba(0,77,105,.6)'}, geographyConfig: {borderWidth: 0, borderColor: 'rgba(0,77,105,.6)', popupOnHover: false, highlightOnHover: false } });

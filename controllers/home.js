@@ -13,4 +13,12 @@ home.get('/', function(req, res, next) {
 
 });
 
+home.get('/geo', function(req, res, next) {
+    res.render('/geo');
+});
+
+home.get('/map', function(req, res, next) {
+    res.render('map');
+});
+
 module.exports.home = home;

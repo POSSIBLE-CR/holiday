@@ -1,14 +1,18 @@
 extend layout
 
 block content
+	script(src="/js/home.js")
 
 	.landing
 
 		.container
 
 			ul.messages
-				each message in messages
-					li.messages
+				each message, index in messages
+					- var className = (index == 1) ? 'active animated fadeInUp' : 'animated'
+					
+					li.message(class=className)
+
 						blockquote.quote-message
 							p #{message.message}
 							if message.country

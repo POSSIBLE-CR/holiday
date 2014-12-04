@@ -13,38 +13,49 @@ body{
 	text-align: center;
 }
 
-.container{
+.container {
     width: 100vw;
     position: absolute;
     top: 10vh;
     left: 0;
+}
 
-    .quote-message {
-        width: 70vw;
-        max-width: 900px;
-        margin: 0 auto;
+.messages {
+    .message {
+        display: none;
 
-        p {
-            font-size: 3vw;
-            line-height: 7.5vh;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-
-            &:before{
-                content:"“";
-            }
-
-            &:after{
-                content:"”";
-            }
-        }
-
-        small {
+        &.active {
             display: block;
-            padding-top: 10px;
-            font-size: 14px;
-            line-height: 2vw;
         }
+    }
+}
+
+.quote-message {
+    width: 70vw;
+    max-width: 900px;
+    margin: 0 auto;
+
+    p {
+        font-family: $font-thin;
+        font-size: 5vw;
+        line-height: 9.5vh;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        &:before{
+            content:"“";
+        }
+
+        &:after{
+            content:"”";
+        }
+    }
+
+    small {
+        display: block;
+        padding-top: 10px;
+        font-size: 14px;
+        line-height: 2vw;
     }
 }
     
@@ -74,48 +85,49 @@ body{
     top: 18vh;
     left: 0;
 
-    li{
+    li {
         display: inline-block;
+    }
 
-        a.btn {
-            display: inline-block;
-            margin: 0 20px;
-            padding: 0 77px 0 20px;
+    a.btn {
+        display: inline-block;
+        margin: 0 20px;
+        padding: 0 77px 0 20px;
 
-            background-color: $color-black;
-            color: $color-white;
+        background-color: $color-black;
+        color: $color-white;
 
-            font-family: $font-light;
-            font-size: 27px;
-            line-height: 57px;
-            text-transform: uppercase;
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
+        font-family: $font-light;
+        font-size: 27px;
+        line-height: 57px;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
 
-            &:before {
-                font-family: icomoon;
-                position: absolute;
-                top:0;
-                right:0;
-                width: 57px;
-                display:block;
-                text-align: center;
-                border-left: 1px solid #c2c2c2;
-            }
-
-            &:hover{
-                background-color:$color-white;
-                color: $color-black;
-            }
+        &:before {
+            font-family: icomoon;
+            position: absolute;
+            top:0;
+            right:0;
+            width: 57px;
+            display:block;
+            text-align: center;
+            border-left: 1px solid #c2c2c2;
         }
-    }    
+
+        &:hover{
+            background-color:$color-white;
+            color: $color-black;
+        }
+    }  
 }
 
 
 @media (max-width: 640px) {
-.container{
-    top: 7vh;
+    .container{
+        top: 7vh;
+    }
 
     .quote-message {
         width: 70vw;
@@ -125,25 +137,25 @@ body{
             line-height: 5.5vh;
         }
     }
-}
-    
-.dotted-container{
-    h1.headline {
-        position: static;
-        width: 90vw;
-        margin: 0 auto;
-        font-size: 18px;
-        line-height: 20px;
-        padding: 2vh 0;
+        
+    .dotted-container{
+        h1.headline {
+            position: static;
+            width: 90vw;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 20px;
+            padding: 2vh 0;
+        }
     }
-}
 
-.login{
-    position: static;
-    text-align: center;
+    .login{
+        position: static;
+        text-align: center;
 
-    li{
-        width: 70vw;
+        li{
+            width: 70vw;
+        }
 
         a.btn{
             display: block;
@@ -158,5 +170,4 @@ body{
             }
         }
     }
-}
 }

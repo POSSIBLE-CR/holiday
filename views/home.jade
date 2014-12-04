@@ -5,11 +5,16 @@ block content
 	.landing
 
 		.container
-		
-			blockquote.quote-message
-				p Babe, you're my everything
-				small from Marco Kelso in San José.
-			
+
+			ul.messages
+				each message in messages
+					li.messages
+						blockquote.quote-message
+							p #{message.message}
+							if message.country
+								small from #{message.userDisplayName} in #{message.country}
+							else
+								small from #{message.userDisplayName}
 
 		.dotted-container
 			h1.headline Share a loving message on this holidays.

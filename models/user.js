@@ -14,10 +14,9 @@ var UserSchema = new Schema({
     locale: { type: String },
     verified: { type: Boolean },
     id : { type: String, unique : true },
-    socialNetwork : { type: String, required: true }
+    socialNetwork : { type: String, required: true },
+    avatar : { type: String }
 });
-
-UserSchema.plugin(timestamp, { useVirtual: false });
 
 UserSchema.statics.addUser = function(profile, accessToken,  cb ) {
     var user = new User({
@@ -41,5 +40,7 @@ UserSchema.statics.addUser = function(profile, accessToken,  cb ) {
 };
 
 UserSchema.index({ 'id' : 1});
+
+UserSchema.plugin(timestamp, { useVirtual: false });
 
 module.exports = User = mongoose.model('User', UserSchema);

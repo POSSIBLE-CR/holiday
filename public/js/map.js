@@ -135,7 +135,7 @@ var map = map || {};
 		.attr("transform", "translate(" + t + ")scale(" + s + ")");//original
 
  		vars.g.selectAll("path")
-      	.attr("d", patH);
+      	.attr("d", patH); 
 
 		//vars.radius = contains the km reference value to show the nuggets around
       	switch(s){

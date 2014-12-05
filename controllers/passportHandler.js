@@ -55,15 +55,15 @@ passport.deserializeUser(function(user, done) {
 passportRouter.get('/auth/twitter', passport.authenticate('twitter'));
 
 passportRouter.get('/auth/twitter/callback', passport.authenticate('twitter', {
-    successRedirect: '/',
-    failureRedirect: '/signup'
+    successRedirect: '/createmessage',
+    failureRedirect: '/'
 }));
 
 passportRouter.get('/auth/facebook', passport.authenticate('facebook',{scope: FACEBOOK_PERMISSIONS }));
 
 passportRouter.get('/auth/facebook/callback', passport.authenticate('facebook', {
-    successRedirect: '/',
-    failureRedirect: '/signup'
+    successRedirect: '/createmessage',
+    failureRedirect: '/'
 }));
 
 module.exports.passportRouter = passportRouter;

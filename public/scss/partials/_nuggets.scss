@@ -1,7 +1,5 @@
-//@import 'variables.scss';
-
-.nugg {
-    display: block;
+[class*=nugget]{
+    display: inline-block;
     width: 100px;
     height: 100px;
     background-image: url(../img/nuggets.svg);
@@ -103,3 +101,69 @@
 // NGT-10
 @-webkit-keyframes nugget10{@include nugget(-900px);}
 @keyframes nugget10{@include nugget(-900px);}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// HALO OF OWN NUGGET
+.own{
+    position: relative;
+    &:before{
+        content:"";
+        display: block;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        @include border-radius(50%);
+        z-index: -1;
+        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+        -webkit-animation: ownhallo 1s linear infinite;
+        animation: ownhallo 1s linear infinite;
+    }
+}
+
+@mixin halo() {
+    0% {
+        width: 5px;
+        height: 5px;
+        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.4);
+        top:50%;
+        left:50%;
+        margin: -2.5px 0 0 -2.5px;
+    }
+    50% {
+        width: 100px;
+        height: 100px;
+        box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.6);
+        top:50%;
+        left:50%;
+        margin: -50px 0 0 -50px;
+    }
+    100% {
+        width: 150px;
+        height: 150px;
+        box-shadow: inset 0 0 80px rgba(255, 255, 255, 0);
+        top:50%;
+        left:50%;
+        margin: -75px 0 0 -75px;
+    }
+}
+
+@-webkit-keyframes ownhallo{@include halo();}
+@keyframes ownhallo{@include halo();}
+
+
+
+
+
+
+
+
+
+
+
+

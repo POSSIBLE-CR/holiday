@@ -40,3 +40,15 @@ $ cd path/to/the-holiday-project
 $ vagrant up</code></pre>
 
 Wait until it's done, once it's ready, wait a few seconds and then open in your browser <a href="http://192.168.168.168" target="_blank">the project, that is running on your virtual machine</a>. If see a "502 Bad Gateway" gateway in your browser, just wait for a few more seconds before reloading the project page.
+
+## PAGES
+
+- / : HOME and login
+- /createmessage : Submit a message
+- /message/:id : this page will show the shared message, where the id param is the ID of the message
+
+## API
+
+- /messages [GET METHOD] : return all the messages
+- /messages [POST METHOD] : Create a message
+- /messages/:id [GET METHOD] : return the message with the id param

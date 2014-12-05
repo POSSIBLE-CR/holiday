@@ -22,7 +22,6 @@ var map = map || {};
 	function getAllMessagesAround () {}
 
 	/* DRAWING */
-
 	function drawUser (coordinate) {
 		vars.g.selectAll("image")
 			.data([coordinate]).enter().append("svg:image")

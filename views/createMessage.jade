@@ -1,0 +1,13 @@
+extend layout
+
+block content
+
+    h1 Create Message
+    form(name="message", action="/api/messages", method="post")
+        input(type="text", name="message" , placeholder="message")
+        input(type="number", name="longitude", placeholder="longitude")
+        input(type="number", name="latitude", placeholder="latitude")
+        input(type="text", name="country", placeholder="country")
+        input(type="text", name="countryCode", placeholder="countryCode")
+        input(type="text", name="city", placeholder="city")
+        input(type="submit")

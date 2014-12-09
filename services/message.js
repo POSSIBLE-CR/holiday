@@ -12,7 +12,7 @@ var networkUtils = require('./../utils/network');
  * @param res {object} Express res
  * @param next {object} Express next
  */
-module.exports.createMessage = function createMessage(req, res, next) {
+module.exports.createMessage = function(req, res, next) {
     var message = new Message();
     var userMessage = req.param('message');
     var longitude = parseFloat(req.param('longitude'));
@@ -47,4 +47,25 @@ module.exports.createMessage = function createMessage(req, res, next) {
     }else {
         res.status(400).send('Bad Request, missing parameters');
     }
+};
+
+module.exports.getMessages = function(req, res, next) {
+    Message.find().sort({ "created":-1}).limit(200).exec( function(error, results){
+        if (error){
+            console.log(error);
+            res.sendStatus(500);
+        }
+        res.status(200).json(results || []);
+    });    
+};
+
+
+module.exports.getMessageById = function(req, res, next) {
+    Message.findById(req.params.id, function(error, result){
+        if (error){
+            console.log(error);
+            res.sendStatus(500);
+        }
+        res.status(200).json(result || {});
+    });    
 };

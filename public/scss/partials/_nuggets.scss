@@ -1,0 +1,105 @@
+//@import 'variables.scss';
+
+.nugg {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-image: url(../img/nuggets.svg);
+    text-indent: -9999px;
+    animation: 1s linear infinite;
+}
+
+
+//Nuggets List
+.nugget1{
+    -webkit-animation: nugget1 1s linear infinite;
+    animation: nugget1 1s linear infinite;
+}
+.nugget2{
+    -webkit-animation: nugget2 1s linear infinite;
+    animation: nugget2 1s linear infinite;
+}
+.nugget3{
+    -webkit-animation: nugget3 1s linear infinite;
+    animation: nugget3 1s linear infinite;
+}
+.nugget4{
+    -webkit-animation: nugget4 1s linear infinite;
+    animation: nugget4 1s linear infinite;
+}
+.nugget5{
+    -webkit-animation: nugget5 1s linear infinite;
+    animation: nugget5 1s linear infinite;
+}
+.nugget6{
+    -webkit-animation: nugget6 1s linear infinite;
+    animation: nugget6 1s linear infinite;
+}
+.nugget7{
+    -webkit-animation: nugget7 1s linear infinite;
+    animation: nugget7 1s linear infinite;
+}
+.nugget8{
+    -webkit-animation: nugget8 1s linear infinite;
+    animation: nugget8 1s linear infinite;
+}
+.nugget9{
+    -webkit-animation: nugget9 1s linear infinite;
+    animation: nugget9 1s linear infinite;
+}
+.nugget10{
+    -webkit-animation: nugget10 1s linear infinite;
+    animation: nugget10 1s linear infinite;
+}
+
+@mixin nugget($ngt) {
+    0% {background-position: 0px $ngt;}
+    24.99% {background-position: 0px $ngt;}
+    25% {background-position: -100px $ngt;}
+    49.99% {background-position: -100px $ngt;}
+    50% {background-position: -200px $ngt;}
+    74.99% {background-position: -200px $ngt;}
+    75% {background-position: -300px $ngt;}
+    99.99% {background-position: -300px $ngt;}
+    100% {background-position: -400px $ngt;}
+}
+
+// NGT-1
+@-webkit-keyframes nugget1{@include nugget(0px);}
+@keyframes nugget1{@include nugget(0px);}
+
+// NGT-2
+@-webkit-keyframes nugget2{@include nugget(-100px);}
+@keyframes nugget2{@include nugget(-100px);}
+
+// NGT-3
+@-webkit-keyframes nugget3{@include nugget(-200px);}
+@keyframes nugget3{@include nugget(-200px);}
+
+// NGT-4
+@-webkit-keyframes nugget4{@include nugget(-300px);}
+@keyframes nugget4{@include nugget(-300px);}
+
+// NGT-5
+@-webkit-keyframes nugget5{@include nugget(-400px);}
+@keyframes nugget5{@include nugget(-400px);}
+
+// NGT-6
+@-webkit-keyframes nugget6{@include nugget(-500px);}
+@keyframes nugget6{@include nugget(-500px);}
+
+// NGT-7
+@-webkit-keyframes nugget7{@include nugget(-600px);}
+@keyframes nugget7{@include nugget(-600px);}
+
+// NGT-8
+@-webkit-keyframes nugget8{@include nugget(-700px);}
+@keyframes nugget8{@include nugget(-700px);}
+
+// NGT-9
+@-webkit-keyframes nugget9{@include nugget(-800px);}
+@keyframes nugget9{@include nugget(-800px);}
+
+// NGT-10
+@-webkit-keyframes nugget10{@include nugget(-900px);}
+@keyframes nugget10{@include nugget(-900px);}

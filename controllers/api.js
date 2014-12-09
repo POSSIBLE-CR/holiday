@@ -6,6 +6,10 @@ api.post('/messages', function(req, res, next) {
     messageService.createMessage(req,res,next);
 });
 
+api.get('/messages/user', function(req, res, next) {
+	messageService.getUserMessages(req,res,next);
+});
+
 api.get('/messages/:id', function(req, res, next) {
     messageService.getMessageById(req,res,next);
 });

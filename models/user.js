@@ -15,7 +15,8 @@ var UserSchema = new Schema({
     verified: { type: Boolean },
     id : { type: String, unique : true },
     socialNetwork : { type: String, required: true },
-    avatar : { type: String }
+    avatar : { type: String },
+    receivedMessages : [{ type: Schema.ObjectId, ref: 'Message' }]
 });
 
 UserSchema.statics.addUser = function(profile, accessToken,  cb ) {

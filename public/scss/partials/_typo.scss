@@ -92,6 +92,21 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-out:before {
+	content: "\e602";
+}
+.icon-in:before {
+	content: "\e603";
+}
+.icon-message:before {
+	content: "\e604";
+}
+.icon-find-me:before {
+	content: "\e605";
+}
+.icon-new-message:before {
+	content: "\e606";
+}
 .icon-facebook:before {
 	content: "\e600";
 }

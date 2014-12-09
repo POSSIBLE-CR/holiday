@@ -55,15 +55,28 @@ passport.deserializeUser(function(user, done) {
 passportRouter.get('/auth/twitter', passport.authenticate('twitter'));
 
 passportRouter.get('/auth/twitter/callback', passport.authenticate('twitter', {
-    successRedirect: '/createmessage',
+    successRedirect: '/auth/loggedin',
     failureRedirect: '/'
 }));
 
 passportRouter.get('/auth/facebook', passport.authenticate('facebook',{scope: FACEBOOK_PERMISSIONS }));
 
 passportRouter.get('/auth/facebook/callback', passport.authenticate('facebook', {
-    successRedirect: '/createmessage',
+    successRedirect: '/auth/loggedin',
     failureRedirect: '/'
 }));
+
+passportRouter.get('/auth/loggedin', function (req, res) {
+    if (req.user){       
+        res.cookie('possible.holiday.socialNetwork', req.user.socialNetwork);
+        if (req.session.messageId){
+            return res.redirect('/message/' + req.session.messageId);
+        }else {
+            return res.redirect('/createmessage');
+        }
+    }else{
+        return res.redirect('/');
+    }    
+});
 
 module.exports.passportRouter = passportRouter;

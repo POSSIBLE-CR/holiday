@@ -35,7 +35,8 @@ app.get('/createmessage', function(req, res, next) {
 
 app.get('/message/:id', function(req, res, next) {
 	if (!req.isAuthenticated()) {
-        res.redirect('/'+req.params.id);
+        req.session.messageId = req.params.id;
+        res.redirect('/?showLoginMessage=true');
     }else{
         messageService.linkMessage(req.user,req.params.id);
         res.render('friendMessage');

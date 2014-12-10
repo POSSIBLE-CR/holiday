@@ -1,802 +1,160 @@
-//@import 'variables.scss';
+$width: 100px;
 
-.nugg {
-    display: block;
-    width: 100px;
-    height: 100px;
+[class*=nugget]{
+    display: inline-block;
+    width: $width;
+    height: $width;
     background-image: url(../img/nuggets.svg);
+    background-size: ($width * 4);
     text-indent: -9999px;
     animation: 1s linear infinite;
 }
 
-/* line 20, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-.nugget1 {
-  -webkit-animation: nugget1 1s linear infinite;
-  animation: nugget1 1s linear infinite; }
 
-/* line 24, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-.nugget2 {
-  -webkit-animation: nugget2 1s linear infinite;
-  animation: nugget2 1s linear infinite; }
-
-/* line 28, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-.nugget3 {
-  -webkit-animation: nugget3 1s linear infinite;
-  animation: nugget3 1s linear infinite; }
-
-/* line 32, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-.nugget4 {
-  -webkit-animation: nugget4 1s linear infinite;
-  animation: nugget4 1s linear infinite; }
-
-/* line 36, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-.nugget5 {
-  -webkit-animation: nugget5 1s linear infinite;
-  animation: nugget5 1s linear infinite; }
-
-/* line 40, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-.nugget6 {
-  -webkit-animation: nugget6 1s linear infinite;
-  animation: nugget6 1s linear infinite; }
-
-/* line 44, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-.nugget7 {
-  -webkit-animation: nugget7 1s linear infinite;
-  animation: nugget7 1s linear infinite; }
-
-/* line 48, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-.nugget8 {
-  -webkit-animation: nugget8 1s linear infinite;
-  animation: nugget8 1s linear infinite; }
-
-/* line 52, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-.nugget9 {
-  -webkit-animation: nugget9 1s linear infinite;
-  animation: nugget9 1s linear infinite; }
-
-/* line 56, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-.nugget10 {
-  -webkit-animation: nugget10 1s linear infinite;
-  animation: nugget10 1s linear infinite; }
-
-@-webkit-keyframes nugget1 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px 0px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px 0px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px 0px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px 0px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px 0px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px 0px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px 0px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px 0px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px 0px; } }
-
-@keyframes nugget1 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px 0px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px 0px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px 0px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px 0px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px 0px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px 0px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px 0px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px 0px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px 0px; } }
-
-@-webkit-keyframes nugget2 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -100px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -100px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -100px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -100px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -100px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -100px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -100px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -100px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -100px; } }
-
-@keyframes nugget2 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -100px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -100px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -100px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -100px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -100px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -100px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -100px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -100px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -100px; } }
-
-@-webkit-keyframes nugget3 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -200px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -200px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -200px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -200px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -200px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -200px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -200px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -200px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -200px; } }
-
-@keyframes nugget3 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -200px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -200px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -200px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -200px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -200px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -200px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -200px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -200px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -200px; } }
-
-@-webkit-keyframes nugget4 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -300px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -300px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -300px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -300px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -300px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -300px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -300px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -300px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -300px; } }
-
-@keyframes nugget4 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -300px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -300px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -300px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -300px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -300px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -300px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -300px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -300px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -300px; } }
-
-@-webkit-keyframes nugget5 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -400px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -400px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -400px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -400px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -400px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -400px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -400px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -400px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -400px; } }
-
-@keyframes nugget5 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -400px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -400px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -400px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -400px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -400px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -400px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -400px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -400px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -400px; } }
-
-@-webkit-keyframes nugget6 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -500px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -500px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -500px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -500px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -500px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -500px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -500px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -500px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -500px; } }
-
-@keyframes nugget6 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -500px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -500px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -500px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -500px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -500px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -500px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -500px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -500px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -500px; } }
-
-@-webkit-keyframes nugget7 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -600px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -600px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -600px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -600px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -600px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -600px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -600px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -600px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -600px; } }
-
-@keyframes nugget7 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -600px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -600px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -600px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -600px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -600px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -600px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -600px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -600px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -600px; } }
-
-@-webkit-keyframes nugget8 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -700px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -700px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -700px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -700px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -700px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -700px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -700px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -700px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -700px; } }
-
-@keyframes nugget8 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -700px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -700px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -700px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -700px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -700px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -700px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -700px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -700px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -700px; } }
-
-@-webkit-keyframes nugget9 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -800px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -800px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -800px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -800px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -800px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -800px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -800px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -800px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -800px; } }
-
-@keyframes nugget9 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -800px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -800px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -800px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -800px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -800px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -800px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -800px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -800px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -800px; } }
-
-@-webkit-keyframes nugget10 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -900px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -900px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -900px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -900px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -900px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -900px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -900px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -900px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -900px; } }
-
-@keyframes nugget10 {
-  /* line 62, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  0% {
-    background-position: 0px -900px; }
-
-  /* line 63, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  24.99% {
-    background-position: 0px -900px; }
-
-  /* line 64, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  25% {
-    background-position: -100px -900px; }
-
-  /* line 65, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  49.99% {
-    background-position: -100px -900px; }
-
-  /* line 66, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  50% {
-    background-position: -200px -900px; }
-
-  /* line 67, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  74.99% {
-    background-position: -200px -900px; }
-
-  /* line 68, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  75% {
-    background-position: -300px -900px; }
-
-  /* line 69, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  99.99% {
-    background-position: -300px -900px; }
-
-  /* line 70, /Users/caleb.briancesco/Sites/Possible/Holiday/scss/defaults.scss */
-  100% {
-    background-position: -400px -900px; } }
-
-/*# sourceMappingURL=defaults.css.map */
+//Nuggets List
+.nugget1{
+    -webkit-animation: nugget1 1s linear infinite;
+    animation: nugget1 1s linear infinite;
+}
+.nugget2{
+    -webkit-animation: nugget2 1s linear infinite;
+    animation: nugget2 1s linear infinite;
+}
+.nugget3{
+    -webkit-animation: nugget3 1s linear infinite;
+    animation: nugget3 1s linear infinite;
+}
+.nugget4{
+    -webkit-animation: nugget4 1s linear infinite;
+    animation: nugget4 1s linear infinite;
+}
+.nugget5{
+    -webkit-animation: nugget5 1s linear infinite;
+    animation: nugget5 1s linear infinite;
+}
+.nugget6{
+    -webkit-animation: nugget6 1s linear infinite;
+    animation: nugget6 1s linear infinite;
+}
+.nugget7{
+    -webkit-animation: nugget7 1s linear infinite;
+    animation: nugget7 1s linear infinite;
+}
+.nugget8{
+    -webkit-animation: nugget8 1s linear infinite;
+    animation: nugget8 1s linear infinite;
+}
+.nugget9{
+    -webkit-animation: nugget9 1s linear infinite;
+    animation: nugget9 1s linear infinite;
+}
+.nugget10{
+    -webkit-animation: nugget10 1s linear infinite;
+    animation: nugget10 1s linear infinite;
+}
+
+@mixin nugget($ngt) {
+    0% {background-position: 0px $ngt;}
+    24.99% {background-position: 0px $ngt;}
+    25% {background-position: -($width) $ngt;}
+    49.99% {background-position: -($width) $ngt;}
+    50% {background-position: -($width * 2) $ngt;}
+    74.99% {background-position: -($width * 2) $ngt;}
+    75% {background-position: -($width * 3) $ngt;}
+    99.99% {background-position: -($width * 3) $ngt;}
+    100% {background-position: -($width * 4) $ngt;}
+}
+
+// NGT-1
+@-webkit-keyframes nugget1{@include nugget(0px);}
+@keyframes nugget1{@include nugget(0px);}
+
+// NGT-2
+@-webkit-keyframes nugget2{@include nugget(-($width));}
+@keyframes nugget2{@include nugget(-($width));}
+
+// NGT-3
+@-webkit-keyframes nugget3{@include nugget(-($width *2 ));}
+@keyframes nugget3{@include nugget(-($width * 2));}
+
+// NGT-4
+@-webkit-keyframes nugget4{@include nugget(-($width * 3));}
+@keyframes nugget4{@include nugget(-($width * 3));}
+
+// NGT-5
+@-webkit-keyframes nugget5{@include nugget(-($width * 4));}
+@keyframes nugget5{@include nugget(-($width * 4));}
+
+// NGT-6
+@-webkit-keyframes nugget6{@include nugget(-($width * 5));}
+@keyframes nugget6{@include nugget(-($width * 5));}
+
+// NGT-7
+@-webkit-keyframes nugget7{@include nugget(-($width * 6));}
+@keyframes nugget7{@include nugget(-($width * 6));}
+
+// NGT-8
+@-webkit-keyframes nugget8{@include nugget(-($width * 7));}
+@keyframes nugget8{@include nugget(-($width * 7));}
+
+// NGT-9
+@-webkit-keyframes nugget9{@include nugget(-($width * 8));}
+@keyframes nugget9{@include nugget(-($width *8));}
+
+// NGT-10
+@-webkit-keyframes nugget10{@include nugget(-($width * 9));}
+@keyframes nugget10{@include nugget(-($width *9));}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// HALO OF OWN NUGGET
+.own{
+    position: relative;
+    &:before{
+        content:"";
+        display: block;
+        width: $width;
+        height: $width;
+        position: absolute;
+        @include border-radius(50%);
+        z-index: -1;
+        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+        -webkit-animation: ownhallo 1s linear infinite;
+        animation: ownhallo 1s linear infinite;
+    }
+}
+
+@mixin hallo() {
+    0% {
+        width: 2px;
+        height: 2px;
+        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.4);
+        top:50%;
+        left:50%;
+        margin: -1px 0 0 -1px;
+    }
+    50% {
+        width: ($width * 1);
+        height: ($width * 1);
+        box-shadow: inset 0 0 $width x 1 rgba(255, 255, 255, 0.6);
+        top:50%;
+        left:50%;
+        margin: -($width / 2) 0 0 -($width / 2);
+    }
+    100% {
+        width: ($width * 1.5);
+        height: ($width * 1.5);
+        box-shadow: inset 0 0 ($width * 1.5) rgba(255, 255, 255, 0);
+        top:50%;
+        left:50%;
+        margin: -(($width * 1.5) / 2) 0 0 -(($width * 1.5) / 2);
+    }
+}
+
+@-webkit-keyframes ownhallo{@include hallo();}
+@keyframes ownhallo{@include hallo();}

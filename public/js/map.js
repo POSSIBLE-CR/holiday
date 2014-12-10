@@ -69,7 +69,7 @@ var map = map || {};
 	    .attr("width", 100)
 	    .attr("height", 100)
 	  	//.append("xhtml:body")
-	    .html("<div class='nugg nuggets6' > </div>");
+	    .html("<div class='nugg nugget6'></div>");
 
 /*
 		vars.g.append("svg:image")

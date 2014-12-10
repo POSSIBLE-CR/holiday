@@ -8,6 +8,9 @@ var map = map || {};
 		winW : null,
 		winH : null,
 		zoom : null,
+		radius : null,
+		zoom_x : null,
+		zoom_y : null,
 		g : null,
 		scale : 1,
 		translate : [0,0]
@@ -19,28 +22,22 @@ var map = map || {};
 
 	function getUser () {}
 
-	function readMessagesApi (path) {
-		var items = [];
-		var a = [];
-		console.log(path);
-		$.getJSON(path).success(function(data) {//cosuming API
-			/*
-			$.each( data, function( i ) {
-	    		items.push( data[i] );	    		
-	    		a = items;
-	    		//console.log(items);
-	  		});*/
-		console.log(data);
-	  	return data;
-		}).error(function(error){console.log(error);});
-				
-	}
-
 	function getAllMessagesAround (km, coordinate) {
-		var items = [];
-		items = readMessagesApi('api/messages');
-		console.log('sss2');
-		console.log(items);
+		$.ajax({
+			type: "GET",
+		  	url: "api/messages",
+		  	data: {
+		  	km: km,
+		  	coordinate: coordinate
+		  }
+		}).done( function (data) {
+			console.log(data);
+			if (data !== undefined) {
+				$.each(data, function (index, message) {
+					drawUser(message.location.coordinates, message.userDisplayName, message.message, null, false);
+				});
+			}
+		});
 	}
 
 	/*
@@ -61,7 +58,7 @@ var map = map || {};
 
 	/* DRAWING */
 
-	function drawUser (coordinate) {
+	function drawUser (coordinate, userDisplayName, message, avatar, isCurrentUser) {
 
 		vars.g.append("foreignObject")
 		.attr("x", vars.projection(coordinate)[0])
@@ -70,14 +67,6 @@ var map = map || {};
 	    .attr("height", 100)
 	  	//.append("xhtml:body")
 	    .html("<div class='nugg nugget6'></div>");
-
-/*
-		vars.g.append("svg:image")
-			.attr("x", vars.projection(coordinate)[0])
-			.attr("y", vars.projection(coordinate)[1])
-			.attr('width', 12.5)
-			.attr('height', 12.5)    
-			.attr("xlink:href", "../img/avatars/banana.gif");*/
 	}
 	
 	function drawSomeUser (coordinate_array) {
@@ -88,18 +77,14 @@ var map = map || {};
 			.attr("y", function (d) {  return vars.projection(d)[1]; })
 			.attr('width', 12.5)
 			.attr('height', 12.5)    
-			.attr("xlink:href", "../img/avatars/banana.gif");		
+			.attr("xlink:href", "../img/avatars/banana.gif");
 
-	}
-
-
-	function drawIndividuals () {
 	}
 
 	function drawMessageGroup () {}
 
 	function drawPoints () {
-		drawUser([-122.490402, 37.786453]);
+		drawUser([24, -27]);
 		drawUser([-122.490402, 47.786453]);
 	}
 
@@ -109,6 +94,7 @@ var map = map || {};
 		vars.projection = d3.geo.mercator().translate([0, 0]).scale(width / 2 / Math.PI);
 		// Set zoom scale
 		vars.zoom = d3.behavior.zoom().scaleExtent([1, 8]).on("zoom", move);
+
 		// Create path
 		var path = d3.geo.path().projection(vars.projection);
 
@@ -159,14 +145,35 @@ var map = map || {};
 		vars.scale = s;
 		vars.translate = t;
 
-		console.log(t);
-
 		t[0] = Math.min(vars.winW / 2 * (s - 1), Math.max(vars.winW / 2 * (1 - s), t[0]));
 		t[1] = Math.min(vars.winH / 2 * (s - 1) + 230 * s, Math.max(vars.winH / 2 * (1 - s) - 230 * s, t[1]));
+
+		data = vars.projection.invert([t[0], t[1]]);
+
+		vars.zoom_x = data[0]*-1;
+		vars.zoom_y = data[1]*-1;
+
+		switch(s){
+      		case 2:
+      			vars.radius ='5503';// km, ml=3421
+      			break;
+      		case 4:
+      			vars.radius ='2883';// km, ml=1792
+      			break;
+      		case 8:
+      			vars.radius ='1801';// km, ml=1119
+      			break;
+      	}
+      	
 
 		vars.zoom.translate(t);
 		vars.g.style("stroke-width", 1 / s)
 			.attr("transform", "translate(" + t + ")scale(" + s + ")");
+
+		//getAllMessagesAround(vars.radius,"["+vars.zoom_x+","+vars.zoom_x+"]" );
+
+		console.log("Radius KM="+vars.radius);
+		console.log("["+vars.zoom_x+","+vars.zoom_y+"]");
 	}
 
 	/* INIT */
@@ -177,7 +184,8 @@ var map = map || {};
 			vars.winH = window.innerHeight;
 		}
 
-		drawMap(drawPoints);
+		//drawMap(drawPoints);
+		drawMap(getAllMessagesAround);		
 
 		$(".zoom-control").on('click', function (event) {
 			event.preventDefault();

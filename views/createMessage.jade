@@ -1,13 +1,14 @@
 extend layout
 
 block content
+    #message-box
 
-    h1 Create Message
-    form(name="message", action="/api/messages", method="post")
-        input(type="text", name="message" , placeholder="message")
-        input(type="number", name="longitude", placeholder="longitude")
-        input(type="number", name="latitude", placeholder="latitude")
-        input(type="text", name="country", placeholder="country")
-        input(type="text", name="countryCode", placeholder="countryCode")
-        input(type="text", name="city", placeholder="city")
-        input(type="submit")
+    form.addMessage(name="message", action="api/messages", method="post")
+        textarea(type="text", class="text-message", name="message", col="20", rows="4", maxlength="140", placeholder="Type your message here")
+        input(type="hidden", name="longitude", placeholder="longitude")
+        input(type="hidden", name="latitude", placeholder="latitude")
+        input(type="hidden", name="country", placeholder="country")
+        input(type="hidden", name="countryCode", placeholder="countryCode")
+        input(type="hidden", name="city", placeholder="city")
+        input(type="hidden", name="profanity")
+        input.share-button(type="submit",  value="Share")

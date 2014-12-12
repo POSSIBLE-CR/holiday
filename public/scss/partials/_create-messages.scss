@@ -1,0 +1,74 @@
+
+
+.text-message{
+	width: 79.7vw;
+    /*max-width: 900px;*/
+    margin: 0 auto;
+  
+    font-family: $font-thin;
+    font-size: 5vw;
+    line-height: 9.5vh;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    background-color:$color-lightblue;
+    color:$color-white;
+    border: 0px solid;
+    text-align:center;
+    outline: 0;
+
+    &:before{
+        content:"“";
+    }
+
+    &:after{
+        content:"”";
+    }
+}
+
+.addMessage{
+	width:80%;
+	height:70%;
+	margin: 0 auto;
+}
+.share-button:hover{
+	background-color: #fff;
+    color: #000;
+}
+
+.share-button{
+	display: inline-block;
+	margin: 0 20px 0 43%;
+	padding: 0 40px 0 40px;
+	background-color: #000;
+	color: #fff;
+	font-family: "ProximaNovaLight","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	font-size: 27px;
+	line-height: 57px;
+	text-align:center;
+	text-transform: uppercase;
+	text-decoration: none;
+	display: inline-block;
+	position: relative;
+	border: 0px solid;
+}
+
+#message-box{
+	padding-top:10%;
+}
+
+::-webkit-input-placeholder {
+    font-style: italic;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    font-style: italic;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    font-style: italic;
+}
+
+:-ms-input-placeholder {  
+    font-style: italic;
+}

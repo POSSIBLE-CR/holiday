@@ -29,32 +29,6 @@ base.party = (function ($) {
 base.party.init();
 
 
-/*
-$('.hola').on('click', function(e){
-    e.preventdefault;
-    console.log('Test');
-    			
-    return false;             
-});
-
-$( ".hola" ).click(function() {   
-    return false;
-});
-*/  
-/*
-
-$( ".btn icon-twitter" ).click(function() {
-    alert("tw");
-    $.cookie("social_login", "tw");
-});    
-
-$( ".btn icon-facebook" ).click(function() {
-    alert("fb");
-    $.cookie("social_login", "fb");
-});    
-*/
-
-
 function hola(){
 	
 	console.log(document.cookie);

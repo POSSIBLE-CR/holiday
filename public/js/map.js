@@ -18,7 +18,19 @@ var map = map || {};
 
 	/* API CALLS */
 
-	function getAllGroupedMessages () {}
+	function getAllGroupedMessages () {
+		$.ajax({
+			type: "GET",
+		  	url: "api/messages"
+		}).done( function (data) {
+			if (data !== undefined) {
+				$.each(data, function (index, message) {
+					console.log(message.location.coordinates);
+					drawMessageGroup(message.location.coordinates);
+				});
+			}
+		});
+	}
 
 	function getUser () {}
 
@@ -65,7 +77,6 @@ var map = map || {};
 		.attr("y", vars.projection(coordinate)[1])
 	    .attr("width", 100)
 	    .attr("height", 100)
-	  	//.append("xhtml:body")
 	    .html("<div class='nugg nugget6'></div>");
 	}
 	
@@ -81,11 +92,19 @@ var map = map || {};
 
 	}
 
-	function drawMessageGroup () {}
+	function drawMessageGroup (coordinate) {
+		vars.g.append("foreignObject")
+			.attr("x", vars.projection(coordinate)[0])
+			.attr("y", vars.projection(coordinate)[1])
+		    .attr("width", 50)
+		    .attr("height", 50)
+		    .html("<span class='icon-message'></span>");
+	}
 
 	function drawPoints () {
-		drawUser([24, -27]);
-		drawUser([-122.490402, 47.786453]);
+		//drawUser([24, -27]);
+		//drawUser([-122.490402, 47.786453]);
+		getAllGroupedMessages();
 	}
 
 	function drawMap (callback) {
@@ -185,7 +204,7 @@ var map = map || {};
 		}
 
 		//drawMap(drawPoints);
-		drawMap(getAllMessagesAround);		
+		drawMap(drawPoints);		
 
 		$(".zoom-control").on('click', function (event) {
 			event.preventDefault();

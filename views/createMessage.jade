@@ -10,5 +10,8 @@ block content
         input(type="hidden", name="country", placeholder="country")
         input(type="hidden", name="countryCode", placeholder="countryCode")
         input(type="hidden", name="city", placeholder="city")
-        input(type="hidden", name="profanity")
-        input.share-button(type="submit",  value="Share")
+        input(type="hidden", name="profanity", value='false')
+        #share-box
+            h1 Share a loving message on this holidays.
+            br
+            input.share-button(type="submit",  value="Share")

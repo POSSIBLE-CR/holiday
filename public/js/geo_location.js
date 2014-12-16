@@ -8,13 +8,23 @@ holiday.party = (function ($) {
         city        = null,
         countryCode = null,
         profanity   = null,
+        profanities_array = [],
         latitude    = null,
         longitude   = null;
     
-    // DETECTING IF GEOLOCATION IS ACTIVATED
     function init() {
-        //e.preventdefault;
+        // DETECTING IF GEOLOCATION IS ACTIVATED
         navigator.geolocation.getCurrentPosition(allowLocation,deniedLocation);
+
+        var profanities_array_es = [];
+        $.getJSON( "../json/es.json", function(data) {
+            profanities_array_es = fillSelect(data);
+        });
+
+        $.getJSON( "../json/en.json", function(data) {
+            var profanities_array_en = fillSelect(data);
+            profanities_array = profanities_array_en.concat(profanities_array_es);
+        });
 
         return false;
         
@@ -40,11 +50,6 @@ holiday.party = (function ($) {
                 $( "input:hidden[name=country]" ).val(countryName);
                 $( "input:hidden[name=countryCode]" ).val(countryCode);
                 $( "input:hidden[name=city]" ).val(city);
-
-               
-            
-
-
             });
 
             console.log('Option 1 worked = lat: ' + latitude + ' ' + 'lon: ' + longitude);
@@ -80,6 +85,7 @@ holiday.party = (function ($) {
     
     var containsProfanity = function(text,profanities){
         var returnVal = false; 
+        
         for (var i = 0; i < profanities.length; i++) {
             if(text.toLowerCase().contains(profanities[i].toLowerCase())){
                 console.log(profanities[i].toLowerCase());
@@ -109,21 +115,17 @@ holiday.party = (function ($) {
         x.html("<li>latitude: " + latitude + "</li><li>longitude: " + longitude + "</li>");
     }
 
+    //Populata the field 'allowed/profanity' after check vs the json list.
     $(document).ready(function(){
         $( ".addMessage" ).submit(function( event ) {
             var myText =  $( ".text-message" ).val();
-;
-            var jqxhr = $.getJSON( "../json/en.json", null, function(data) {
-            var profanities = fillSelect(data);
 
-            if(containsProfanity(myText,profanities)){
-                $( "input:hidden[name=profanity]" ).val('true');
-            }
-            else{
-                $( "input:hidden[name=profanity]" ).val('false');
-            }
-            });
-
+                if(containsProfanity(myText,profanities_array)){
+                    $( "input:hidden[name=profanity]" ).val('false');
+                }
+                else{
+                    $( "input:hidden[name=profanity]" ).val('true');
+                }
 
         });
     });

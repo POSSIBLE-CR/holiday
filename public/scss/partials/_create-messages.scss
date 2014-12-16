@@ -38,7 +38,6 @@
 
 .share-button{
 	display: inline-block;
-	margin: 0 20px 0 43%;
 	padding: 0 40px 0 40px;
 	background-color: #000;
 	color: #fff;
@@ -49,8 +48,25 @@
 	text-transform: uppercase;
 	text-decoration: none;
 	display: inline-block;
-	position: relative;
 	border: 0px solid;
+	margin-left:25%;
+}
+
+#share-box{
+	height:150px;
+	width:500px;
+	margin-left:25%;
+}
+
+h1{
+	font-family: "ProximaNovaLight","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	font-size: 20px;
+	line-height: 57px;text-align:center;
+	text-transform: uppercase;
+	text-decoration: none;
+	display: inline-block;
+	color:white;
+	text-align: center;
 }
 
 #message-box{

@@ -18,6 +18,8 @@ module.exports.createMessage = function(req, res, next) {
     var userMessage = req.param('message');
     var longitude = parseFloat(req.param('longitude'));
     var latitude = parseFloat(req.param('latitude'));
+                console.log(req.param(req));
+
     if (req.user && userMessage && latitude && longitude && (typeof latitude === "number") && (typeof longitude === "number")){
         message.message = userMessage;
         message.location.coordinates.push(longitude);
@@ -36,6 +38,10 @@ module.exports.createMessage = function(req, res, next) {
         }
         if (req.param('city')){
             message.city = req.param('city');
+        }
+        if (req.param('profanity')){
+            message.allowed = req.param('profanity');
+            console.log(message.allowed);
         }
         message.save(function (error, result, numberAffected) {
             if (error){

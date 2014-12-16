@@ -15,7 +15,8 @@ var MessageSchema = new Schema({
     location : {
         type : { type: String, default: 'Point'},
         coordinates : { type: [Number] }
-    }
+    },
+    receivedBy : [{ type: Schema.ObjectId, ref: 'User' }]
 });
 
 MessageSchema.index({ "location" : "2dsphere"});

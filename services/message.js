@@ -5,6 +5,7 @@
 
 var Message = require('./../models/message');
 var networkUtils = require('./../utils/network');
+var async = require('async');
 
 /***
  * Parse the request and save the message on the DB
@@ -54,8 +55,9 @@ module.exports.getMessages = function(req, res, next) {
         if (error){
             console.log(error);
             res.sendStatus(500);
+        }else{
+            res.status(200).json(results || []);
         }
-        res.status(200).json(results || []);
     });    
 };
 
@@ -65,7 +67,61 @@ module.exports.getMessageById = function(req, res, next) {
         if (error){
             console.log(error);
             res.sendStatus(500);
+        }else{
+            res.status(200).json(result || {});
         }
-        res.status(200).json(result || {});
     });    
+};
+
+module.exports.getUserMessages = function(req, res, next) {
+    async.parallel([
+        function(callback){
+            Message.find({"user" : req.user._id}).sort({"created":-1}).exec(function(error, results){
+                if (error){
+                    console.log(error);
+                }
+                callback(error | null, results);
+            });
+        },
+        function(callback){
+            Message.find().where('_id').in(req.user.receivedMessages).sort({"created":-1}).exec(function(error, results){
+                if (error){
+                    console.log(error);
+                }
+                callback(error | null, results);
+            });
+        }
+    ],
+    function(error, results){
+        if (error){
+            console.log(error);
+            res.sendStatus(500);
+        }else{
+            res.status(200).json({ 
+                myMessages : results[0],
+                receivedMessages : results[1]
+            });
+        }
+    });
+};
+
+module.exports.linkMessage = function(user, messageId) {
+    async.parallel([
+        function(callback){
+            Message.findOneAndUpdate({ _id : messageId }, { $addToSet: {receivedBy : user._id} }, { new : true } , function(error, message){
+                if (error){
+                    console.log(error);
+                }
+                callback(error, message);
+            });
+        },
+        function(callback){
+            User.findOneAndUpdate({ _id : user._id }, { $addToSet: {receivedMessages : messageId} }, { new : true } , function(error, user){
+                if (error){
+                    console.log(error);
+                }
+                callback(error, user);
+            });       
+        }
+    ]);
 };

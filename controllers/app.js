@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express.Router();
 var Message = require('./../models/message');
+var User = require('./../models/user');
 var messageService = require('./../services/message');
 
 app.get('/', function(req, res, next) {
@@ -18,10 +19,19 @@ app.get('/', function(req, res, next) {
 });
 
 app.get('/map', function(req, res, next) {
+   
     if (!req.isAuthenticated()) {
         res.redirect('/');
     }else{
-        res.render('map');
+        
+        Message.findOne({"user" : req.user._id}).sort({"created":-1}).limit(1).exec(function(error, result){
+            if (error){
+                console.log(error);
+            }
+            res.locals.userInfo = result || [];
+            res.render('map');
+        });
+
     }
 });
 

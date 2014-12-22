@@ -16,6 +16,7 @@ var map = map || {};
 		translate : [0,0]
 	};
 
+
 	/* API CALLS */
 
 	function getAllGroupedMessages () {}
@@ -85,8 +86,14 @@ var map = map || {};
 	function drawMessageGroup () {}
 
 	function drawPoints () {
-		drawUser([24, -27]);
-		drawUser([-122.490402, 47.786453]);
+		
+		console.log(local_data.location['message']);
+		if(local_data.location['coordinates'][0] != '' ){
+			drawUser([local_data.location['coordinates'][0], local_data.location['coordinates'][1]]);	
+		}
+
+		
+		//drawUser([-122.490402, 47.786453]);
 	}
 
 	function drawMap (callback) {
@@ -185,8 +192,7 @@ var map = map || {};
 			vars.winH = window.innerHeight;
 		}
 
-		//drawMap(drawPoints);
-		drawMap(getAllMessagesAround);		
+		drawMap(drawPoints);
 
 		$(".zoom-control").on('click', function (event) {
 			event.preventDefault();

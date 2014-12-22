@@ -107,7 +107,6 @@ holiday.party = (function ($) {
             console.log("Option 3 didn't worked");
         });
     }
-    
 
 
     // SHOW VALUES
@@ -117,7 +116,8 @@ holiday.party = (function ($) {
 
     //Populata the field 'allowed/profanity' after check vs the json list.
     $(document).ready(function(){
-        $( ".addMessage" ).submit(function( event ) {
+        $('.addMessage').on('submit', function(event){
+        //$( ".addMessage" ).submit(function( event ) {
             var myText =  $( ".text-message" ).val();
 
                 if(containsProfanity(myText,profanities_array)){
@@ -127,6 +127,26 @@ holiday.party = (function ($) {
                     $( "input:hidden[name=profanity]" ).val('true');
                 }
 
+                event.preventDefault();
+                $.ajax({
+                   type: "POST",
+                   url: "api/messages",
+                   data: $(this).serialize(),
+                   success: function() {
+                        if(typeof($.cookie('possible.holiday.socialNetwork')) != "undefined" && $.cookie('possible.holiday.socialNetwork') !== null) {
+                            if($.cookie('possible.holiday.socialNetwork') === "twitter" ){
+                                return true;
+                            }else if($.cookie('possible.holiday.socialNetwork') === "facebook" ){
+
+                            }
+
+                            
+                        }
+                     
+                   }
+                });
+
+                
         });
     });
 

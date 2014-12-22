@@ -3,7 +3,7 @@ extend layout
 block content
     #message-box
 
-    form.addMessage(name="message", action="api/messages", method="post")
+    form.addMessage(name="message", action="#", method="post")
         textarea(type="text", class="text-message", name="message", col="20", rows="4", maxlength="140", placeholder="Type your message here")
         input(type="hidden", name="longitude", placeholder="longitude")
         input(type="hidden", name="latitude", placeholder="latitude")

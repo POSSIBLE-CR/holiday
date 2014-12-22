@@ -18,7 +18,6 @@ module.exports.createMessage = function(req, res, next) {
     var userMessage = req.param('message');
     var longitude = parseFloat(req.param('longitude'));
     var latitude = parseFloat(req.param('latitude'));
-                console.log(req.param(req));
 
     if (req.user && userMessage && latitude && longitude && (typeof latitude === "number") && (typeof longitude === "number")){
         message.message = userMessage;
@@ -41,14 +40,18 @@ module.exports.createMessage = function(req, res, next) {
         }
         if (req.param('profanity')){
             message.allowed = req.param('profanity');
-            console.log(message.allowed);
         }
         message.save(function (error, result, numberAffected) {
             if (error){
                 console.log(error);
                 res.sendStatus(500);
             }else {
-                res.status(201).json(result);
+
+                res.status(200).json(result);
+                //share functionality here
+               // return res.redirect('/map');
+
+                // ************ redirect to map, query the user by id and set the point
             }
         });
     }else {

@@ -5,6 +5,9 @@ block content
     script(src="http://d3js.org/d3.v3.min.js")
     script(src="http://d3js.org/topojson.v1.min.js")
     script(src="/js/libs/datamaps.world.min.js")
+
+    script(type='text/javascript').
+        var local_data =!{JSON.stringify(userInfo)}
     script(src="/js/map.js")
 
     #map-container.dotted-container

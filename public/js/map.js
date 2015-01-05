@@ -67,7 +67,8 @@ var map = map || {};
 	    .attr("width", 100)
 	    .attr("height", 100)
 	  	//.append("xhtml:body")
-	    .html("<div class='nugg nugget6' > </div>");
+	    .html("<div style='background-color:red' class='nugg nugget6' > </div>");
+	    //pendant to center the 
 
 	}
 	
@@ -88,6 +89,11 @@ var map = map || {};
 	function drawPoints () {
 		
 		console.log(local_data.location['message']);
+
+		
+		console.log(local_data.location['coordinates'][1]);
+		console.log(local_data.location['coordinates'][0]);
+		
 		if(local_data.location['coordinates'][0] != '' ){
 			drawUser([local_data.location['coordinates'][0], local_data.location['coordinates'][1]]);	
 		}

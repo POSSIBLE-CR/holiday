@@ -67,7 +67,7 @@ var map = map || {};
 	    .attr("width", 100)
 	    .attr("height", 100)
 	  	//.append("xhtml:body")
-	    .html("<div style='background-color:red' class='nugg nugget6' > </div>");
+	    .html("<div class='nugg nugget6'  > </div>");
 	    //pendant to center the 
 
 	}
@@ -88,13 +88,12 @@ var map = map || {};
 
 	function drawPoints () {
 		
-		console.log(local_data.location['message']);
-
-		
+		console.log(local_data);
 		console.log(local_data.location['coordinates'][1]);
 		console.log(local_data.location['coordinates'][0]);
 		
 		if(local_data.location['coordinates'][0] != '' ){
+			addShareButtom();
 			drawUser([local_data.location['coordinates'][0], local_data.location['coordinates'][1]]);	
 		}
 
@@ -188,6 +187,20 @@ var map = map || {};
 
 		console.log("Radius KM="+vars.radius);
 		console.log("["+vars.zoom_x+","+vars.zoom_y+"]");
+	}
+
+	function addShareButtom(){
+
+  		if(typeof($.cookie('possible.holiday.socialNetwork')) != "undefined" 
+  			&& $.cookie('possible.holiday.socialNetwork') !== null) {
+            if($.cookie('possible.holiday.socialNetwork') === "twitter" ){
+            	console.log('entra tweet');
+    			$( ".share-tw-box" ).css("display", "block");
+            }else if($.cookie('possible.holiday.socialNetwork') === "facebook" ){
+            	$( ".share-fb-box" ).css("display", "block");
+            	console.log('entra fb');
+            }
+        }
 	}
 
 	/* INIT */

@@ -14,13 +14,13 @@ holiday.party = (function ($) {
     
     function init() {
         // DETECTING IF GEOLOCATION IS ACTIVATED
+       
         navigator.geolocation.getCurrentPosition(allowLocation,deniedLocation);
 
         var profanities_array_es = [];
         $.getJSON( "../json/es.json", function(data) {
             profanities_array_es = fillSelect(data);
         });
-
         $.getJSON( "../json/en.json", function(data) {
             var profanities_array_en = fillSelect(data);
             profanities_array = profanities_array_en.concat(profanities_array_es);
@@ -44,6 +44,7 @@ holiday.party = (function ($) {
             }, function(result) {
                 countryName = result.countryName;
                 countryCode = result.countryCode;
+                console.log(countryCode);
                 city = result.city;//not return anything for CostaRica
                 $( "input:hidden[name=longitude]" ).val(longitude);
                 $( "input:hidden[name=latitude]" ).val(latitude);
@@ -128,21 +129,23 @@ holiday.party = (function ($) {
                 }
 
                 event.preventDefault();
+                /*$config = array(
+                    'oauth_access_token' => 'token-here',
+                    'oauth_access_token_secret' => 'token-here',
+                    'consumer_key' => 'token-here',
+                    'consumer_secret' => 'token-here',
+                    'use_whitelist' => true, // If you want to only allow some requests to use this script.
+                    'base_url' => 'https://api.twitter.com/1.1/'
+                );*/
+console.log('quiza ');
+        
                 $.ajax({
                    type: "POST",
                    url: "api/messages",
                    data: $(this).serialize(),
                    success: function() {
-                        if(typeof($.cookie('possible.holiday.socialNetwork')) != "undefined" && $.cookie('possible.holiday.socialNetwork') !== null) {
-                            if($.cookie('possible.holiday.socialNetwork') === "twitter" ){
-                                return true;
-                            }else if($.cookie('possible.holiday.socialNetwork') === "facebook" ){
-
-                            }
-
-                            
-                        }
-                     
+                    console.log('ahora si');
+                        window.location.replace("/map");
                    }
                 });
 

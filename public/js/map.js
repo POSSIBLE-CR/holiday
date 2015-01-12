@@ -70,6 +70,14 @@ var map = map || {};
 	    .html("<div class='nugg nugget6'  > </div>");
 	    //pendant to center the 
 
+	    vars.g.append("foreignObject")
+		.attr("x", vars.projection(coordinate)[0])
+		.attr("y", vars.projection(coordinate)[1])
+	    .attr("width", 400)
+	    .attr("height", 100)
+	  	//.append("xhtml:body")
+	    .html('<blockquote class="bubble"><p>"' + message + '"</p><small>from ' + userDisplayName + ' in COSTA RICA</small></blockquote>');
+
 	}
 	
 	function drawSomeUser (coordinate_array) {
@@ -98,7 +106,7 @@ var map = map || {};
 		}
 
 		
-		//drawUser([-122.490402, 47.786453]);
+		drawUser([-122.490402, 47.786453]);
 	}
 
 	function drawMap (callback) {

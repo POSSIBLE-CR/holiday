@@ -11,6 +11,7 @@ var MessageSchema = new Schema({
     country : { type : String },
     countryCode : { type : String },
     city : { type : String },
+    allowed : { type : Boolean, default:false },
     ip : { type : String },
     location : {
         type : { type: String, default: 'Point'},

@@ -16,6 +16,7 @@ var map = map || {};
 		translate : [0,0]
 	};
 
+
 	/* API CALLS */
 
 	function getAllGroupedMessages () {
@@ -77,7 +78,19 @@ var map = map || {};
 		.attr("y", vars.projection(coordinate)[1])
 	    .attr("width", 100)
 	    .attr("height", 100)
-	    .html("<div class='nugg nugget6'></div>");
+
+	  	//.append("xhtml:body")
+	    .html("<div class='nugg nugget6'  > </div>");
+	    //pendant to center the 
+
+	    vars.g.append("foreignObject")
+		.attr("x", vars.projection(coordinate)[0])
+		.attr("y", vars.projection(coordinate)[1])
+	    .attr("width", 400)
+	    .attr("height", 100)
+	  	//.append("xhtml:body")
+	    .html('<blockquote class="bubble"><p>"' + message + '"</p><small>from ' + userDisplayName + ' in COSTA RICA</small></blockquote>');
+
 	}
 	
 	function drawSomeUser (coordinate_array) {
@@ -102,9 +115,20 @@ var map = map || {};
 	}
 
 	function drawPoints () {
-		//drawUser([24, -27]);
-		//drawUser([-122.490402, 47.786453]);
+
 		getAllGroupedMessages();
+
+		
+		console.log(local_data);
+		console.log(local_data.location['coordinates'][1]);
+		console.log(local_data.location['coordinates'][0]);
+		
+		if(local_data.location['coordinates'][0] != '' ){
+			addShareButtom();
+			drawUser([local_data.location['coordinates'][0], local_data.location['coordinates'][1]]);	
+		}
+
+		
 	}
 
 	function drawMap (callback) {
@@ -195,6 +219,20 @@ var map = map || {};
 		console.log("["+vars.zoom_x+","+vars.zoom_y+"]");
 	}
 
+	function addShareButtom(){
+
+  		if(typeof($.cookie('possible.holiday.socialNetwork')) != "undefined" 
+  			&& $.cookie('possible.holiday.socialNetwork') !== null) {
+            if($.cookie('possible.holiday.socialNetwork') === "twitter" ){
+            	console.log('entra tweet');
+    			$( ".share-tw-box" ).css("display", "block");
+            }else if($.cookie('possible.holiday.socialNetwork') === "facebook" ){
+            	$( ".share-fb-box" ).css("display", "block");
+            	console.log('entra fb');
+            }
+        }
+	}
+
 	/* INIT */
 
 	function init () {
@@ -203,8 +241,12 @@ var map = map || {};
 			vars.winH = window.innerHeight;
 		}
 
+
 		//drawMap(drawPoints);
 		drawMap(drawPoints);		
+
+		drawMap(drawPoints);
+
 
 		$(".zoom-control").on('click', function (event) {
 			event.preventDefault();

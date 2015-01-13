@@ -20,12 +20,14 @@ var UserSchema = new Schema({
 });
 
 UserSchema.statics.addUser = function(profile, accessToken,  cb ) {
+    var random_avatar = (parseFloat((Math.random() * 10)).toFixed()).toString(); //From 1-9, just 9 avatar available for know
     var user = new User({
         id : profile.id,
         socialNetwork : profile.provider,
         username: profile.username || '',
         name: profile.displayName,
         accessToken: accessToken,
+        avatar : random_avatar,
         gender: profile.gender
     });
 

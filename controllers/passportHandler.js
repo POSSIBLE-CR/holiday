@@ -79,4 +79,26 @@ passportRouter.get('/auth/loggedin', function (req, res) {
     }    
 });
 
+passportRouter.get('/twitter/tweet', function (req, res) {
+  makeTweet(function (error, data) {
+    if(error) {
+      console.log(require('sys').inspect(error));
+      res.end('bad stuff happened');
+    } else {
+      console.log(data);
+      res.end('go check your tweets!');
+    }
+  });
+});
+
+function makeTweet(cb, status) {
+  oa.post(
+    "https://api.twitter.com/1.1/statuses/update.json"
+  , user.token
+  , user.tokenSecret
+  , {"status": "test " }
+  , cb
+  );
+}
+
 module.exports.passportRouter = passportRouter;

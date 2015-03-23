@@ -9,10 +9,13 @@
 	overflow: hidden;
 }
 
+.message {
+	display: none;
+}
+
 .bubble {
 	position: fixed;
 	top: -150px;
-	left: 60px;
 
 	padding: 20px;
 	background-color: #fff;

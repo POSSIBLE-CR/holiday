@@ -19,15 +19,15 @@ var map = map || {};
 
 	/* API CALLS */
 
-	function getAllGroupedMessages () {
+	function getAllMessages () {
 		$.ajax({
 			type: "GET",
 		  	url: "api/messages"
 		}).done( function (data) {
 			if (data !== undefined) {
 				$.each(data, function (index, message) {
-					console.log(message.location.coordinates);
-					drawMessageGroup(message.location.coordinates);
+					console.log(message);
+					drawMessage(message);
 				});
 			}
 		});
@@ -35,39 +35,6 @@ var map = map || {};
 
 	function getUser () {}
 
-	function getAllMessagesAround (km, coordinate) {
-		$.ajax({
-			type: "GET",
-		  	url: "api/messages",
-		  	data: {
-		  	km: km,
-		  	coordinate: coordinate
-		  }
-		}).done( function (data) {
-			console.log(data);
-			if (data !== undefined) {
-				$.each(data, function (index, message) {
-					drawUser(message.location.coordinates, message.userDisplayName, message.message, null, false);
-				});
-			}
-		});
-	}
-
-	/*
-	*  TESTER function to display n nueggets
-	*
-	*/
-	function displayTesterNuggets(){
-		var c = [];
-		var a,b;
-		for (i = 0; i < 10000; i++) { 
-			console.log(i);
-			a = (Math.random() * i+15);
-			b = (Math.random() * i+5);
-			c.push([a*10,b*3]);
-		} 
-		drawUser(c);
-	}
 
 	/* DRAWING */
 
@@ -92,43 +59,38 @@ var map = map || {};
 	    .html('<blockquote class="bubble"><p>"' + message + '"</p><small>from ' + userDisplayName + ' in COSTA RICA</small></blockquote>');
 
 	}
-	
-	function drawSomeUser (coordinate_array) {
 
-		vars.g.selectAll("image")
-			.data([coordinate_array]).enter().append("svg:image")	
-			.attr("x", function (d) {  return vars.projection(d)[0]; })
-			.attr("y", function (d) {  return vars.projection(d)[1]; })
-			.attr('width', 12.5)
-			.attr('height', 12.5)    
-			.attr("xlink:href", "../img/avatars/banana.gif");
+	function drawMessage (message) {
+		var coordinate = message.location.coordinates;
 
-	}
+		vars.g.append("circle")
+		.style("stroke", "yellow")
+		.style("fill", "yellow")
+		.attr("r", 5)
+		.attr("class", "message-point")
+		.attr("dataid", message._id)
+		.attr("cx", vars.projection(coordinate)[0])
+		.attr("cy", vars.projection(coordinate)[1])
+		.on("mouseover", function () {
+			$(".message[dataid='"+$(this).attr("dataid")+"']").css("display", "block");
+		})
+    	.on("mouseout", function () {
+    		$(".message[dataid='"+$(this).attr("dataid")+"']").css("display", "none");
+    	});
 
-	function drawMessageGroup (coordinate) {
 		vars.g.append("foreignObject")
-			.attr("x", vars.projection(coordinate)[0])
-			.attr("y", vars.projection(coordinate)[1])
-		    .attr("width", 50)
-		    .attr("height", 50)
-		    .html("<span class='icon-message'></span>");
+		.attr("x", vars.projection(coordinate)[0])
+		.attr("y", vars.projection(coordinate)[1])
+	    .attr("width", 400)
+	    .attr("height", 100)
+	    .attr("class", "message")
+	    .attr("dataid", message._id)
+	  	//.append("xhtml:body")
+	    .html('<blockquote class="bubble"><p>"' + message.message + '"</p><small>from ' + message.userDisplayName + ' in ' + message.country +'</small></blockquote>');
 	}
 
 	function drawPoints () {
-
-		getAllGroupedMessages();
-
-		
-		console.log(local_data);
-		console.log(local_data.location['coordinates'][1]);
-		console.log(local_data.location['coordinates'][0]);
-		
-		if(local_data.location['coordinates'][0] != '' ){
-			addShareButtom();
-			drawUser([local_data.location['coordinates'][0], local_data.location['coordinates'][1]]);	
-		}
-
-		
+		getAllMessages();		
 	}
 
 	function drawMap (callback) {
@@ -182,7 +144,7 @@ var map = map || {};
 	function goTo () {}
 
 	function move () {
-		var t = d3.event.translate,
+		/*var t = d3.event.translate,
 			s = d3.event.scale;
 
 		vars.scale = s;
@@ -216,7 +178,7 @@ var map = map || {};
 		//getAllMessagesAround(vars.radius,"["+vars.zoom_x+","+vars.zoom_x+"]" );
 
 		console.log("Radius KM="+vars.radius);
-		console.log("["+vars.zoom_x+","+vars.zoom_y+"]");
+		console.log("["+vars.zoom_x+","+vars.zoom_y+"]");*/
 	}
 
 	function addShareButtom(){
@@ -241,21 +203,7 @@ var map = map || {};
 			vars.winH = window.innerHeight;
 		}
 
-
-		//drawMap(drawPoints);
 		drawMap(drawPoints);		
-
-		drawMap(drawPoints);
-
-
-		$(".zoom-control").on('click', function (event) {
-			event.preventDefault();
-			if ($(this).hasClass("in")) {
-				centeredZoomInOut(1);
-			} else {
-				centeredZoomInOut(-1)
-			}
-		})
 	}
 
 	$(init);

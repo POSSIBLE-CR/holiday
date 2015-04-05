@@ -1,6 +1,7 @@
 extend layout
 
 block content
+    script(src="/js/create_message.js")
     
     #message-box
 
@@ -17,4 +18,5 @@ block content
             h1.headline Share a loving message on this holidays.
 
             .share-wrapper
-                input.share-button(type="submit",  value="Share")
+                a.share-button(href='#', target="_blank") Share
+                input(type="submit",  value="Share")

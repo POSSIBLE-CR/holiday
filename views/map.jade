@@ -10,63 +10,30 @@ block content
         var local_data =!{JSON.stringify(userInfo)}
     script(src="/js/map.js")
 
-    #map-container.dotted-container
+    .mapview-wrapper
 
-    //  .nugget1
-        .nugget2
-        .nugget3
-        .nugget4
-        .nugget5
-        .nugget6
-        .nugget7
-        .nugget8
-        .nugget9.own
-        .nugget10
-    
+        #map-container
 
-        .share-tw-box
-            a(href="#", class='twitter-share-button', data-count='none', data-text='custom text here....', data-url='http://goo.gl/TD7rai') Tweet
-            
-            <script type="text/javascript">
 
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";js.setAttribute('onload', "twttr.events.bind('rendered',function(e) {doSomething()});");fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+        #message-container
 
-            </script>
+            ul
+                each message, index in messages
+                    
+                    li.message-item
 
-        .share-fb-box 
-            script.
-                (function(d, s, id) {
-                  var js, fjs = d.getElementsByTagName(s)[0];
-                  if (d.getElementById(id)) return;
-                  js = d.createElement(s); js.id = id;
-                  js.src = "//connect.facebook.net/en_US/all.js";
-                  fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-
-                window.fbAsyncInit = function() {
-                  FB.init({appId: 751745681585829, status: false});
-                };
-        
-            <button style="width:83px;height:32px;background-image:url('http://thefitnessdefinition.com/wp-content/plugins/share-locker//images/fb-share-button.png');" onclick="gogogo()"></button>
-            script.
-                function gogogo() {
-                  FB.ui({
-                    method: 'feed',
-                    link: 'http://google.com',
-                    // picture: 'http://fbrell.com/f8.jpg',
-                    name: 'Sharrrre!',
-                    caption: 'Awesomesauce',
-                    // description: 'Must read daily!'
-                  });
-                }     
+                        blockquote
+                            p #{message.message}
+                            if message.country
+                                small from #{message.userDisplayName} in #{message.country}
+                            else
+                                small from #{message.userDisplayName}
 
 
 
-    .footer-links
-        ul
-            li
-                a(href='#').icon-new-message
-            li
-                a(href='#').icon-find-me
+        .footer-links
+            ul
+                li
+                    a(href='/createmessage').icon-new-message
                      
 

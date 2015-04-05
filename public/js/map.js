@@ -181,27 +181,11 @@ var map = map || {};
 		console.log("["+vars.zoom_x+","+vars.zoom_y+"]");*/
 	}
 
-	function addShareButtom(){
-
-  		if(typeof($.cookie('possible.holiday.socialNetwork')) != "undefined" 
-  			&& $.cookie('possible.holiday.socialNetwork') !== null) {
-            if($.cookie('possible.holiday.socialNetwork') === "twitter" ){
-            	console.log('entra tweet');
-    			$( ".share-tw-box" ).css("display", "block");
-            }else if($.cookie('possible.holiday.socialNetwork') === "facebook" ){
-            	$( ".share-fb-box" ).css("display", "block");
-            	console.log('entra fb');
-            }
-        }
-	}
-
 	/* INIT */
 
 	function init () {
-		if (window.innerWidth && window.innerHeight) {
-			vars.winW = window.innerWidth;
-			vars.winH = window.innerHeight;
-		}
+		vars.winW = $("#map-container").width();
+		vars.winH = $("#map-container").height();
 
 		drawMap(drawPoints);		
 	}
